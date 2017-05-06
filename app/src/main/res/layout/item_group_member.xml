@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/llItem"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/selector_follower_bg"
+              android:clickable="true"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civHead"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/usercenter_head_default"
+            app:civ_border_color="#dcdcdc"
+            app:civ_border_width="1dp"/>
+
+        <TextView
+            android:id="@+id/tvRemove"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_item_slider_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="移出分组"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"/>
+
+        <ImageView
+            android:id="@+id/ivAvatarVip"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="-12dp"
+            android:layout_marginTop="34dp"
+            android:layout_toRightOf="@id/civHead"
+            android:src="@drawable/avatar_vip"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_toLeftOf="@id/tvRemove"
+            android:layout_toRightOf="@id/civHead"
+            android:ellipsize="end"
+            android:lines="1"
+            android:textColor="#000"
+            android:textSize="14sp"
+            tools:text="Simpler"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="4dp"
+            android:layout_toLeftOf="@id/tvRemove"
+            android:layout_toRightOf="@id/civHead"
+            android:ellipsize="end"
+            android:lines="1"
+            tools:text="Simpler"
+            android:textColor="#777"
+            android:textSize="11sp"/>
+    </RelativeLayout>
+
+    <include layout="@layout/content_divider"/>
+</LinearLayout>

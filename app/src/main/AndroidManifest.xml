@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="cc.duduhuo.simpler">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- 获取精确地理位置 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 获取粗略地理位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <application
+        android:name=".app.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="cc.duduhuo.simpler.glide.MyGlideModule"
+            android:value="GlideModule"/>
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="fmSVgumQpQOhEAUfEqxMzNioKtuKPQzS"/>
+        <meta-data
+            android:name="cc.duduhuo.simpler.update_date"
+            android:value="${updateDate}"/>
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="590dca032ae85b1ebb00135f"/>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="official"/>
+        <!-- 主界面 -->
+        <activity android:name=".activity.MainActivity">
+        </activity>
+        <!-- 启动界面 -->
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <!-- 微博Web授权 -->
+        <activity
+            android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
+            android:configChanges="keyboardHidden|orientation"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <!-- 微博登录页面 -->
+        <activity android:name=".activity.WBLoginActivity">
+        </activity>
+        <!-- 用户微博主页 -->
+        <activity android:name=".activity.UserHomepageActivity">
+        </activity>
+        <!-- 应用设置界面 -->
+        <activity android:name=".activity.SettingsActivity">
+        </activity>
+        <!-- 微博发布界面 -->
+        <activity
+            android:name=".activity.WBPostActivity"
+            android:theme="@style/postActivityTheme"
+            android:windowSoftInputMode="adjustResize">
+
+            <!-- 接收单张图片 -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+            <!-- 接收纯文本 -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="text/plain"/>
+            </intent-filter>
+            <!-- 接收多张图片 -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEND_MULTIPLE"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+
+                <data android:mimeType="image/*"/>
+            </intent-filter>
+        </activity>
+        <!-- 切换微博帐号 -->
+        <activity android:name=".activity.SwitchAccountActivity">
+        </activity>
+        <!-- 微博粉丝列表界面 -->
+        <activity android:name=".activity.WBFollowersActivity">
+        </activity>
+        <!-- 微博关注列表界面 -->
+        <activity android:name=".activity.WBFriendsActivity">
+        </activity>
+        <!-- 我的微博列表界面 -->
+        <activity android:name=".activity.WBStatusesActivity">
+        </activity>
+        <!-- 微博相册 -->
+        <activity android:name=".activity.WBAlbumActivity">
+        </activity>
+        <!-- 微博用户个人信息界面 -->
+        <activity android:name=".activity.WBUserInfoActivity">
+        </activity>
+        <!-- 微博周边动态 -->
+        <activity android:name=".activity.WBNearbyActivity">
+        </activity>
+        <!-- 图片大图浏览Activity -->
+        <activity android:name=".activity.PhotoViewActivity">
+        </activity>
+        <!-- WebView Activity -->
+        <activity android:name=".activity.WebViewActivity">
+        </activity>
+        <!-- 微博详情界面 -->
+        <activity android:name=".activity.WBStatusDetailActivity">
+        </activity>
+        <!-- 微博用户个人信息界面（非授权用户） -->
+        <activity android:name=".activity.WBUserHomeActivity">
+        </activity>
+        <!-- 网页版微博界面 -->
+        <activity android:name=".activity.WebWBActivity">
+        </activity>
+        <!-- 视频播放器界面 -->
+        <activity
+            android:name=".activity.VideoPlayerActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation">
+        </activity>
+        <!-- At用户界面 -->
+        <activity android:name=".activity.AtFriendActivity">
+        </activity>
+        <!-- 关于界面 -->
+        <activity android:name=".activity.AboutActivity">
+        </activity>
+        <!-- 显示设置界面 -->
+        <activity android:name=".activity.DisplaySettingsActivity">
+        </activity>
+        <!-- 消息通知设置界面 -->
+        <activity android:name=".activity.NotificationSettingsActivity">
+        </activity>
+        <!-- 关于我 -->
+        <activity android:name=".activity.AboutMeActivity">
+        </activity>
+        <!-- 查看微博收藏界面 -->
+        <activity android:name=".activity.WBFavoritesActivity">
+        </activity>
+        <!-- 发布评论界面 -->
+        <activity
+            android:name=".activity.WBCommentActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+        <!-- 搜索界面 -->
+        <activity android:name=".activity.SearchActivity">
+        </activity>
+        <!-- 搜索用户界面 -->
+        <activity android:name=".activity.SearchUsersActivity">
+        </activity>
+        <!-- 搜索话题微博 -->
+        <activity android:name=".activity.SearchTopicsActivity">
+        </activity>
+        <!-- 搜索微博界面 -->
+        <activity android:name=".activity.SearchStatusesActivity">
+        </activity>
+        <!-- 热门微博界面 -->
+        <activity android:name=".activity.HotStatusesActivity">
+        </activity>
+        <!-- 微博草稿箱界面 -->
+        <activity android:name=".activity.DraftsActivity">
+        </activity>
+        <!-- 消息界面 -->
+        <activity android:name=".activity.WBMessageActivity">
+        </activity>
+        <!-- 提到我或我发出的评论列表界面 -->
+        <activity android:name=".activity.CmtMentionActivity">
+        </activity>
+        <!-- @我的微博界面 -->
+        <activity android:name=".activity.StatusMentionActivity">
+        </activity>
+        <!-- 更新备注界面 -->
+        <activity android:name=".activity.UpdateRemarkActivity">
+        </activity>
+        <!-- 管理分组界面 -->
+        <activity android:name=".activity.GroupManagerActivity">
+        </activity>
+        <!-- 编辑分组信息/新建分组界面 -->
+        <activity android:name=".activity.GroupEditActivity">
+        </activity>
+        <!-- 分组好友界面 -->
+        <activity android:name=".activity.GroupMembersActivity">
+        </activity>
+        <!--应用使用到的开源库-->
+        <activity android:name=".activity.ThirdOpenActivity">
+        </activity>
+
+        <!-- 百度地图定位服务 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote">
+        </service>
+        <!-- 未读消息服务 -->
+        <service android:name=".service.UnreadService">
+            <intent-filter>
+                <action android:name="cc.duduhuo.simpler.ACTION_GET"/>
+                <action android:name="cc.duduhuo.simpler.ACTION_UPDATE"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

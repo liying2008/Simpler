@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cc.duduhuo.simpler.activity.WebWBActivity">
+
+    <LinearLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/titlebar_back_btn_selector"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="76dp"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/title_web_wb"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"/>
+    </LinearLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle"/>
+
+    <ProgressBar
+        android:id="@+id/pb"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@id/flTitle"/>
+</RelativeLayout>
+

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.AboutMeActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_about_me"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlMe"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/usercenter_item_global_bg"
+                android:clickable="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civHead"
+                    android:layout_width="66dp"
+                    android:layout_height="66dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/usercenter_photo_fore"
+                    android:clickable="true"
+                    android:padding="0.5dp"
+                    android:src="@drawable/usercenter_head_default"/>
+
+                <ImageView
+                    android:id="@+id/ivAvatarVip"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_marginLeft="-16dp"
+                    android:layout_marginTop="60dp"
+                    android:layout_toRightOf="@id/civHead"
+                    android:src="@drawable/avatar_vip"/>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/civHead"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="marquee"
+                    android:lines="1"
+                    android:text="Simpler"
+                    android:textColor="#555"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/tvDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvName"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="marquee"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:text="Simpler"
+                    android:textColor="#7e7e7e"
+                    android:textSize="12sp"/>
+
+                <TextView
+                    android:id="@+id/tvRelation"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/selector_white_button"
+                    android:clickable="false"
+                    android:gravity="center"
+                    android:text="关注他"
+                    android:textColor="#555555"
+                    android:textSize="12sp"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_top_height"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/usercenter_item_top_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="作者邮箱"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow1"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow1"
+                    android:text="@string/my_email"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlGitHub"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="GitHub"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow2"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvGitHub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow2"
+                    android:text="@string/my_github"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_bottom_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_bottom_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="个人网站"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow3"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvWebsite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow3"
+                    android:text="@string/my_website"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

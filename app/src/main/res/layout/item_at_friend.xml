@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlItem"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/selector_comment_bg"
+        android:clickable="true"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civHead"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/usercenter_head_default"/>
+
+        <ImageView
+            android:id="@+id/ivAvatarVip"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="-12dp"
+            android:layout_marginTop="34dp"
+            android:layout_toRightOf="@id/civHead"
+            android:src="@drawable/avatar_vip"/>
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="100dp"
+            android:layout_toRightOf="@id/civHead"
+            android:ellipsize="marquee"
+            android:lines="1"
+            android:textColor="#000"
+            android:textSize="16sp"
+            tools:text="Simpler"/>
+    </RelativeLayout>
+    <!--分割线-->
+    <include layout="@layout/content_divider"/>
+</LinearLayout>

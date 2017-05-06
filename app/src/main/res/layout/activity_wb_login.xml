@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_content_background"
+    android:orientation="vertical"
+    tools:context="cc.duduhuo.simpler.activity.WBLoginActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/title_login"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="@string/has_not_logined"
+        android:textColor="@color/account_setup_label_text_color"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/selector_login_ok_btn"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/wb_login"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:text="Tip：您可能需要输入两次用户名和密码。第一次为普通授权，第二次为高级授权。"
+        android:textColor="#888888"
+        android:textSize="12sp"/>
+
+</LinearLayout>

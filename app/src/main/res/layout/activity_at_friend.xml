@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.AtFriendActivity">
+
+    <!--标题栏-->
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="66dp"
+            android:layout_marginRight="66dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:lines="1"
+            android:text="联系人"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <RelativeLayout
+        android:id="@+id/rlSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/flTitle"
+        android:background="@drawable/activity_content_background"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvSearchIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchbar_left"/>
+
+        <TextView
+            android:id="@+id/tvSearch"
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_searchbar_search_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="#555555"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/tvSearch"
+            android:layout_toRightOf="@id/tvSearchIcon"
+            android:background="@drawable/searchbar_right"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="搜素好友"
+            android:lines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="40dp"
+            android:textColor="#333333"
+            android:textColorHint="#a1a1a1"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvClearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/etSearch"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/selector_searchbar_text_clear"
+            android:clickable="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <cc.duduhuo.simpler.view.DSwipeRefresh
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rlSearchBar">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvFriends"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </cc.duduhuo.simpler.view.DSwipeRefresh>
+</RelativeLayout>

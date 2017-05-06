@@ -1,0 +1,7 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_color_dark"/>
+</merge>

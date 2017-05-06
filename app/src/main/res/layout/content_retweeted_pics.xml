@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/llRetweetedPics"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llRetweeted_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/retweeted_pics_height"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_1"
+                style="@style/iv_status"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_1"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_1"
+                android:layout_alignRight="@id/ivRetweeted_1"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_1"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_1"
+                android:layout_alignRight="@id/ivRetweeted_1"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_2"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_2"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_2"
+                android:layout_alignRight="@id/ivRetweeted_2"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_2"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_2"
+                android:layout_alignRight="@id/ivRetweeted_2"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_3"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_3"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_3"
+                android:layout_alignRight="@id/ivRetweeted_3"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_3"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_3"
+                android:layout_alignRight="@id/ivRetweeted_3"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRetweeted_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/retweeted_pics_height"
+        android:layout_marginTop="@dimen/pics_distance"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_4"
+                style="@style/iv_status"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_4"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_4"
+                android:layout_alignRight="@id/ivRetweeted_4"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_4"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_4"
+                android:layout_alignRight="@id/ivRetweeted_4"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_5"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_5"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_5"
+                android:layout_alignRight="@id/ivRetweeted_5"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_5"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_5"
+                android:layout_alignRight="@id/ivRetweeted_5"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_6"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_6"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_6"
+                android:layout_alignRight="@id/ivRetweeted_6"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_6"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_6"
+                android:layout_alignRight="@id/ivRetweeted_6"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRetweeted_3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/retweeted_pics_height"
+        android:layout_marginTop="@dimen/pics_distance"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_7"
+                style="@style/iv_status"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_7"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_7"
+                android:layout_alignRight="@id/ivRetweeted_7"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_7"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_7"
+                android:layout_alignRight="@id/ivRetweeted_7"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_8"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_8"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_8"
+                android:layout_alignRight="@id/ivRetweeted_8"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_8"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_8"
+                android:layout_alignRight="@id/ivRetweeted_8"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/ivRetweeted_9"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedGifTag_9"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/ivRetweeted_9"
+                android:layout_alignRight="@id/ivRetweeted_9"/>
+
+            <ImageView
+                android:id="@+id/ivRetweetedLongTag_9"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/ivRetweeted_9"
+                android:layout_alignRight="@id/ivRetweeted_9"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

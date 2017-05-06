@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rlCount"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:showIn="@layout/item_status">
+
+    <TextView
+        android:id="@+id/tvAttitudesCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:drawableLeft="@drawable/ic_like"
+        android:drawablePadding="6dp"
+        android:gravity="center"
+        android:text="11"
+        android:textColor="@color/wb_count_info"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/tvCommentsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:clickable="true"
+        android:drawableLeft="@drawable/selector_ic_comment"
+        android:drawablePadding="6dp"
+        android:gravity="center_vertical"
+        android:text="2"
+        android:textColor="@color/wb_count_info"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/tvRepostsCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="18dp"
+        android:layout_toLeftOf="@id/tvCommentsCount"
+        android:clickable="true"
+        android:drawableLeft="@drawable/selector_ic_repost"
+        android:drawablePadding="6dp"
+        android:gravity="center_vertical"
+        android:text="3"
+        android:textColor="@color/wb_count_info"
+        android:textSize="12sp"/>
+</RelativeLayout>
+    

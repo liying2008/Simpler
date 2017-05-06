@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.SearchActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/title_search"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <RelativeLayout
+        android:id="@+id/rlSearchBar"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/flTitle"
+        android:background="#f1f1f1"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvSearchIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/searchbar_left"/>
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvSearchIcon"
+            android:background="@drawable/searchbar_right"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="输入搜索关键词"
+            android:lines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="40dp"
+            android:textColor="#333333"
+            android:textColorHint="#a1a1a1"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvClearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@id/etSearch"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/selector_searchbar_text_clear"
+            android:clickable="true"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etSearch"
+            android:layout_marginTop="-8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvSearchTopics"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/selector_searchbar_search_btn"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="搜索话题微博"
+                android:textColor="#555555"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvSearchUsers"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tvSearchTopics"
+                android:layout_weight="1"
+                android:background="@drawable/selector_searchbar_search_btn"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="搜索用户"
+                android:textColor="#555555"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvSearchStatuses"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tvSearchUsers"
+                android:layout_weight="1"
+                android:background="@drawable/selector_searchbar_search_btn"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="搜索微博"
+                android:textColor="#555555"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlNoCookie"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlSearchBar"
+        android:layout_marginTop="6dp">
+
+        <TextView
+            android:id="@+id/tvMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:text="@string/get_web_wb_cookie_to_hot_topic"
+            android:textColor="#777777"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMsg"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/selector_white_button"
+            android:clickable="false"
+            android:gravity="center"
+            android:text="登录网页版微博"
+            android:textColor="#555555"
+            android:textSize="12sp"/>
+
+    </RelativeLayout>
+
+    <cc.duduhuo.simpler.view.DSwipeRefresh
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rlSearchBar"
+        android:layout_marginTop="6dp"
+        android:visibility="gone">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvHotTopics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </cc.duduhuo.simpler.view.DSwipeRefresh>
+</RelativeLayout>

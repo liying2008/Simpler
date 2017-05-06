@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="pull_up_to_load_more">上拉加载更多…</string>
+    <string name="no_more_data">没有更多数据了</string>
+    <string name="data_loading">正在加载…</string>
+    <string name="loaded_all">加载完成</string>
+    <string name="no_comment_yet">暂无评论</string>
+</resources>

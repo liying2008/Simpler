@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.ThirdOpenActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/title_third_open"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvOpen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle"
+        android:orientation="vertical"
+        app:layoutManager="LinearLayoutManager"/>
+</RelativeLayout>

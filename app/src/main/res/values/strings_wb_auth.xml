@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="weibosdk_demo_toast_auth_success">授权成功</string>
+    <string name="weibosdk_demo_toast_auth_failed">授权失败</string>
+    <string name="weibosdk_demo_toast_auth_canceled">取消授权</string>
+    <string name="weibosdk_demo_toast_obtain_code_success">获取 Code 成功</string>
+    <string name="weibosdk_demo_toast_obtain_code_failed">获取 Code 失败</string>
+    <string name="weibosdk_demo_toast_obtain_token_success">获取 Token 成功</string>
+    <string name="weibosdk_demo_toast_obtain_token_failed">获取 Token 失败</string>
+    <string name="weibosdk_demo_token_info">Token 信息：</string>
+    <string name="weibosdk_demo_token_has_existed">Token 仍在有效期内，无需再次登录。</string>
+    <string name="weibosdk_demo_token_to_string_format">Token：%1$s \nRefresh Token：%2$s \nexpires_in：%3$s</string>
+    <string name="weibosdk_demo_token_to_string_format_1">Token：%1$s \n有效期：%2$s</string>
+</resources>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.GroupEditActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:text="@string/title_edit_group"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <TextView
+            android:id="@+id/tvOk"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/selector_titlebar_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="完成"
+            android:textColor="@color/title_back_text_color"
+            android:textSize="@dimen/title_btn_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flTitle"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="24dp"
+        android:text="分组名称 (不超过10个汉字)"
+        android:textColor="#555555"
+        android:textSize="12sp"/>
+
+    <EditText
+        android:id="@+id/etGroupName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv1"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/edit_text"
+        android:lines="1"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:text=""
+        android:textColor="#222222"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etGroupName"
+        android:layout_marginTop="4dp"
+        android:paddingLeft="24dp"
+        android:text="分组描述 (不超过70个汉字)"
+        android:textColor="#555555"
+        android:textSize="12sp"/>
+
+    <EditText
+        android:id="@+id/etGroupDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv2"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/edit_text"
+        android:hint="可不填"
+        android:lines="1"
+        android:paddingLeft="26dp"
+        android:paddingRight="26dp"
+        android:textColor="#222222"
+        android:textColorHint="#888888"
+        android:textSize="16sp"/>
+</RelativeLayout>

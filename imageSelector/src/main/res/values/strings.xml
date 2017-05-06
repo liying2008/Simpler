@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Simpler</string>
+    <string name="min_num">最少选择一张图片</string>
+    <string name="max_num">最多选择%1$d张图片</string>
+    <string name="all_images">全部图片</string>
+    <string name="sd_disabled">SD卡不可用</string>
+
+    <string name="image">图片</string>
+    <string name="take_photo">拍照</string>
+
+    <string name="confirm_format">确定(%1$d/%2$d)</string>
+    <string name="confirm">确定</string>
+
+    <string name="open_camera_failure">打开相机失败</string>
+    <string name="permission_storage_denied">请给予应用访问存储器的权限</string>
+    <string name="permission_camera_denied">请给予应用打开相机的权限</string>
+</resources>

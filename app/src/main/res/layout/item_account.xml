@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlItem"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="0.5dp"
+        android:background="@drawable/usercenter_item_global_selector"
+        android:clickable="true">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civAccountHead"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/usercenter_head_default"/>
+
+        <TextView
+            android:id="@+id/tvAccountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/civAccountHead"
+            android:paddingLeft="14dp"
+            android:textColor="#565656"
+            android:textSize="14sp"
+            tools:text="Simpler"/>
+
+        <ImageView
+            android:id="@+id/ivAccountSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="14dp"
+            android:src="@drawable/selected"/>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,22 @@
+ext {
+    android = [
+            applicationId    : "cc.duduhuo.simpler",
+
+            compileSdkVersion: 25,
+            buildToolsVersion: "25.0.2",
+
+            minSdkVersion    : 14,
+            targetSdkVersion : 22,
+
+            versionCode      : 1,
+            versionName      : "1.0.0",
+            updateDate       : "— 更新日期：2017.5.6 —",
+    ]
+
+    dependencies = [
+            // Android Support
+            support_v4  : 'com.android.support:support-v4:25.3.1',
+            appcompat   : 'com.android.support:appcompat-v7:25.1.1',
+            recyclerview: 'com.android.support:recyclerview-v7:25.3.1',
+    ]
+}

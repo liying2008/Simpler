@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/activity_splash"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/splash_bg"
+             tools:context="cc.duduhuo.simpler.activity.SplashActivity">
+
+    <ImageView
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="-120dp"
+        android:src="@drawable/show_512"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="4dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="4dp"
+        android:text="@string/app_name"
+        android:textColor="#f3efff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="15dp"
+        android:text="@string/copyright"
+        android:textColor="#fff"
+        android:textSize="13sp"/>
+</FrameLayout>
+

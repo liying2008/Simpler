@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.imageselector.ImageSelectActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="返回"
+            android:textColor="@color/title_back_text_color"
+            android:textSize="@dimen/title_btn_text_size"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingLeft="80dp"
+            android:paddingRight="80dp"
+            android:text="@string/all_images"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <TextView
+            android:id="@+id/tvOk"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/selector_titlebar_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="确定(0)"
+            android:textColor="@color/title_back_text_color"
+            android:textSize="@dimen/title_btn_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flTitle"
+        android:background="@drawable/titlebar_shadow"/>
+
+    <FrameLayout
+        android:id="@+id/flImageList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle"
+        android:background="@android:color/white"/>
+</RelativeLayout>
+

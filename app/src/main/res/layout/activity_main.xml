@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.MainActivity">
+
+    <!--标题栏-->
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civHeadIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="6dp"
+            android:src="@drawable/usercenter_head_default"
+            app:civ_border_color="@color/head_border"
+            app:civ_border_width="1dp"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/all"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <TextView
+            android:id="@+id/tvSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight="6dp"
+            android:background="@drawable/selector_titlebar_setting_btn"
+            android:clickable="true"
+            android:gravity="center"
+            />
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <!--底部Toolbar-->
+    <RelativeLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/toolbar_bg"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:id="@+id/toolbar_menu_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:drawableLeft="@drawable/toolbar_menu_selector"/>
+
+        <TextView
+            android:id="@+id/toolbar_post_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/toolbar_post_selector"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/toolbar_refresh_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:drawableRight="@drawable/toolbar_refresh_selector"/>
+    </RelativeLayout>
+
+    <!--Toolbar阴影效果-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rlToolbar"
+        android:background="@drawable/toolbar_bg_shadow"/>
+
+    <!--可以下拉刷新和分段加载-->
+    <cc.duduhuo.simpler.view.DSwipeRefresh
+        android:id="@+id/swipeRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rlToolbar"
+        android:layout_below="@id/flTitle">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvStatuses"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </cc.duduhuo.simpler.view.DSwipeRefresh>
+</RelativeLayout>

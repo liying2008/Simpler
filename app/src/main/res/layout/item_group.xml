@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/llItem"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/selector_follower_bg"
+              android:clickable="true"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civImage"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"/>
+
+        <TextView
+            android:id="@+id/tvEdit"
+            android:layout_width="68dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/selector_item_slider_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="编辑"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvDelete"
+            android:layout_width="68dp"
+            android:layout_height="28dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tvEdit"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/selector_item_slider_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvGroupName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:layout_toLeftOf="@id/tvEdit"
+            android:layout_toRightOf="@id/civImage"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="16dp"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="特别关注"/>
+
+        <TextView
+            android:id="@+id/tvMemberCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvGroupName"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@id/tvDel"
+            android:layout_toRightOf="@id/civImage"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="16dp"
+            android:textColor="#666666"
+            android:textSize="14sp"
+            tools:text="4个成员"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/content_divider"/>
+</LinearLayout>

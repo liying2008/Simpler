@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvGone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcfcfc"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="10dp"
+        android:textColor="@color/wb_text"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/llComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcfcfc"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/civHead"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:src="@drawable/usercenter_head_default"
+                app:civ_border_color="@color/head_border"
+                app:civ_border_width="1dp"/>
+
+            <TextView
+                android:id="@+id/tvReply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/selector_cmt_reply"
+                android:clickable="true"
+                android:gravity="center_vertical"/>
+
+            <TextView
+                android:id="@+id/tvUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/tvDel"
+                android:layout_toRightOf="@id/civHead"
+                android:clickable="true"
+                android:ellipsize="marquee"
+                android:lines="1"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:textColor="@color/wb_user"
+                android:textSize="14sp"
+                tools:text="独毒火"/>
+
+            <TextView
+                android:id="@+id/tvSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvUser"
+                android:layout_toRightOf="@id/civHead"
+                android:paddingLeft="10dp"
+                android:paddingTop="6dp"
+                android:textColor="@color/wb_source"
+                android:textSize="10sp"
+                tools:text="微博  weibo.com"/>
+
+            <TextView
+                android:id="@+id/tvCreatedAt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tvUser"
+                android:paddingTop="8dp"
+                android:textColor="@color/wb_time"
+                android:textSize="10sp"
+                tools:text="23分钟前"/>
+
+            <ImageView
+                android:id="@+id/ivAvatarVip"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_marginLeft="-12dp"
+                android:layout_marginTop="32dp"
+                android:layout_toRightOf="@id/civHead"
+                android:src="@drawable/avatar_vip"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="1.2"
+            android:text=""
+            android:textColor="@color/wb_text"
+            android:textSize="14sp"/>
+
+        <!--被转发的原微博-->
+        <LinearLayout
+            android:id="@+id/llReplied"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/retweeted_status_bg"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tvRepliedUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:lines="1"
+                android:textColor="@color/retweeted_user_color"
+                android:textSize="14sp"
+                tools:text="\@独毒火"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"/>
+
+            <TextView
+                android:id="@+id/tvRepliedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:lineSpacingMultiplier="1.2"
+                android:text=""
+                android:textColor="@color/wb_retweeted_text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <!--原微博(评论)被作者删除-->
+        <LinearLayout
+            android:id="@+id/llRepliedGone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@color/retweeted_status_bg"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvGoneInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center_vertical"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/wb_retweeted_text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@android:color/transparent"/>
+</LinearLayout>

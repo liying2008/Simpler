@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="right">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rlOp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_window_mode_bg">
+
+
+            <TextView
+                android:id="@+id/tvOpTitle"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@drawable/popup_window_mask_top"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="@string/select_op"
+                android:textColor="#CACACA"
+                android:textSize="13sp"/>
+
+            <View
+                android:id="@+id/divider_0"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/tvOpTitle"
+                android:background="#EEEEEE"/>
+
+            <!--刷新-->
+            <LinearLayout
+                android:id="@+id/llRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/divider_0"
+                android:background="@drawable/selector_status_op_item_middle"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/refresh"
+                    android:textColor="#6E6E6E"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/llRefresh"
+                android:background="#F6F6F6"/>
+
+            <!--复制网页链接-->
+            <LinearLayout
+                android:id="@+id/llCopyUrl"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/divider_1"
+                android:background="@drawable/selector_status_op_item_middle"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/copy_web_url"
+                    android:textColor="#6E6E6E"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/llCopyUrl"
+                android:background="#F6F6F6"/>
+
+            <!--在浏览器中打开-->
+            <LinearLayout
+                android:id="@+id/llOpen"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/divider_2"
+                android:background="@drawable/selector_status_op_item_bottom"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/open_in_browser"
+                    android:textColor="#6E6E6E"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/arrow"/>
+    </RelativeLayout>
+</FrameLayout>

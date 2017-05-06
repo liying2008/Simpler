@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <include layout="@layout/content_divider"/>
+
+    <TextView
+        android:id="@+id/tvMenuTitle"
+        style="@style/menu_title_text"
+        tools:text="功能列表"/>
+</LinearLayout>

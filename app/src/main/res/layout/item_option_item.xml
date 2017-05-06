@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rlItem"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/selector_dialog_item_bg"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/tvItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="18dp"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            tools:text="内置浏览器"/>
+
+        <ImageView
+            android:id="@+id/ivSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="18dp"
+            android:src="@drawable/selected"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <include layout="@layout/content_divider"/>
+
+</LinearLayout>

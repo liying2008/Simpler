@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvCopyVideoUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_dialog_item_bg"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="@string/video_copy_video_url"
+        android:textColor="#333333"
+        android:textSize="14sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_background"/>
+
+    <TextView
+        android:id="@+id/tvCopyWebUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_dialog_item_bg"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="@string/video_copy_web_url"
+        android:textColor="#333333"
+        android:textSize="14sp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_background"/>
+
+    <TextView
+        android:id="@+id/tvOpen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_dialog_item_bg"
+        android:clickable="true"
+        android:padding="16dp"
+        android:text="@string/open_in_browser"
+        android:textColor="#333333"
+        android:textSize="14sp"/>
+</LinearLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.DisplaySettingsActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_display_settings"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--每次刷新微博数-->
+            <RelativeLayout
+                android:id="@+id/rlStatusCount"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_top_height"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/usercenter_item_top_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="每次刷新微博数"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow1"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow1"
+                    android:text="20"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+            <!--打开应用自动刷新微博-->
+            <RelativeLayout
+                android:id="@+id/rlAutoRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="每次打开自动刷新微博"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow2"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvAutoRefresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow2"
+                    android:text="否"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+            <!--图片显示-->
+            <RelativeLayout
+                android:id="@+id/rlPicQuality"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="微博图片显示质量"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow3"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvPicQuality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow3"
+                    android:text="中图"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+            <!--图片上传质量-->
+            <RelativeLayout
+                android:id="@+id/rlUploadQuality"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="图片上传质量"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow4"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvUploadQuality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow4"
+                    android:text="中图"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+
+            <!--微博字体大小-->
+            <RelativeLayout
+                android:id="@+id/rlFontSize"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_bottom_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_bottom_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="微博字体大小"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow5"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvFontSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow5"
+                    android:text="14pt"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivPhoto"
+        android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:clickable="true"
+        android:paddingRight="12dp"
+        android:paddingTop="12dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/post_pic_add"/>
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/ivPhoto"
+        android:background="@drawable/selector_post_attachment_delete"
+        android:clickable="true"/>
+</RelativeLayout>

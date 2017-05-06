@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.SwitchAccountActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/title_switch_account"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <TextView
+        android:id="@+id/tvAccountNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/flTitle"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="已绑定 1 个微博帐号"
+        android:textColor="#666"
+        android:textSize="12sp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAccountNum"
+        android:layout_marginTop="10dp"
+        android:overScrollMode="never"/>
+
+    <TextView
+        android:id="@+id/tvAddAccount"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/usercenter_item_global_selector"
+        android:text="@string/add_new_account"
+        android:textColor="#555"
+        android:textSize="16sp"/>
+
+</RelativeLayout>

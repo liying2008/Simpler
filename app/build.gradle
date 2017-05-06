@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
+    signingConfigs {
+        config {
+            //加载资源
+            Properties properties = new Properties()
+            InputStream inputStream = project.rootProject.file('local.properties').newDataInputStream();
+            properties.load(inputStream)
+            //读取文件
+            def sdkDir = properties.getProperty('key.file')
+            storeFile file(sdkDir)
+            //读取字段
+            def key_keyAlias = properties.getProperty('keyAlias')
+            def key_keyPassword = properties.getProperty('keyPassword');
+            def key_storePassword = properties.getProperty('storePassword');
+            storePassword key_storePassword
+            keyAlias key_keyAlias
+            keyPassword key_keyPassword
+        }
+    }
+
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        manifestPlaceholders = [updateDate: rootProject.ext.android.updateDate] // 更新日期
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.config
+    }
+
+
+    buildTypes {
+        release {
+            minifyEnabled true  //开启代码混淆
+            zipAlignEnabled true
+            shrinkResources true    // 移除无用的resource文件
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.config
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile project(':weiboSDK')
+    compile project(':weiboEmoticon')
+    compile project(':imageSelector')
+    compile rootProject.ext.dependencies.appcompat
+    compile rootProject.ext.dependencies.support_v4
+    compile rootProject.ext.dependencies.recyclerview
+    compile files('libs/BaiduLBS_Android.jar')
+    compile 'cc.duduhuo.applicationtoast:applicationtoast:0.3'
+    compile 'com.github.chrisbanes:PhotoView:2.0.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'com.squareup.okio:okio:1.12.0'
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.jakewharton:butterknife:8.5.1'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'org.jsoup:jsoup:1.10.2'
+    compile 'com.jpeng:LoadingProgress:1.1.0'
+    compile 'com.google.guava:guava:20.0'
+    compile 'com.liulishuo.filedownloader:library:1.4.2'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+}

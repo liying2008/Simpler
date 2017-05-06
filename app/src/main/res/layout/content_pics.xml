@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/llPics"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginBottom="10dp"
+              android:layout_marginLeft="10dp"
+              android:layout_marginRight="10dp"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pics_height"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_1"
+                style="@style/iv_status"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_1"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_1"
+                android:layout_alignRight="@id/iv_1"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_1"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_1"
+                android:layout_alignRight="@id/iv_1"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_2"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_2"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_2"
+                android:layout_alignRight="@id/iv_2"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_2"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_2"
+                android:layout_alignRight="@id/iv_2"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_3"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_3"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_3"
+                android:layout_alignRight="@id/iv_3"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_3"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_3"
+                android:layout_alignRight="@id/iv_3"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pics_height"
+        android:layout_marginTop="@dimen/pics_distance"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_4"
+                style="@style/iv_status"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_4"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_4"
+                android:layout_alignRight="@id/iv_4"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_4"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_4"
+                android:layout_alignRight="@id/iv_4"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_5"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_5"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_5"
+                android:layout_alignRight="@id/iv_5"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_5"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_5"
+                android:layout_alignRight="@id/iv_5"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_6"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_6"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_6"
+                android:layout_alignRight="@id/iv_6"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_6"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_6"
+                android:layout_alignRight="@id/iv_6"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_3"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/pics_height"
+        android:layout_marginTop="@dimen/pics_distance"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_7"
+                style="@style/iv_status"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_7"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_7"
+                android:layout_alignRight="@id/iv_7"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_7"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_7"
+                android:layout_alignRight="@id/iv_7"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_8"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_8"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_8"
+                android:layout_alignRight="@id/iv_8"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_8"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_8"
+                android:layout_alignRight="@id/iv_8"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/pics_rl">
+
+            <ImageView
+                android:id="@+id/iv_9"
+                style="@style/iv_status"
+                android:layout_marginLeft="@dimen/pics_distance"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag_9"
+                style="@style/pic_gif_tag"
+                android:layout_alignBottom="@id/iv_9"
+                android:layout_alignRight="@id/iv_9"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag_9"
+                style="@style/pic_long_tag"
+                android:layout_alignBottom="@id/iv_9"
+                android:layout_alignRight="@id/iv_9"/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

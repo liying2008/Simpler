@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.SettingsActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_settings"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--其他功能-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="28dp"
+                android:paddingTop="8dp"
+                android:text="其他功能"
+                android:textColor="#777777"
+                android:textSize="12sp"/>
+
+            <!--网页版微博-->
+            <RelativeLayout
+                android:id="@+id/rlWebWB"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_single_height"
+                android:background="@drawable/usercenter_item_global_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="网页版微博"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+            </RelativeLayout>
+
+            <!--应用设置-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="28dp"
+                android:paddingTop="4dp"
+                android:text="应用设置"
+                android:textColor="#777777"
+                android:textSize="12sp"/>
+
+            <!--显示设置-->
+            <RelativeLayout
+                android:id="@+id/rlSettingDisplay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_top_height"
+                android:background="@drawable/usercenter_item_top_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="显示设置"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+            </RelativeLayout>
+
+            <!--浏览器选项-->
+            <RelativeLayout
+                android:id="@+id/rlSettingBrowser"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="浏览器选项"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvBrowser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow"
+                    android:text="内置浏览器"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+
+            </RelativeLayout>
+
+            <!--清除Cookie-->
+            <RelativeLayout
+                android:id="@+id/rlDelCookie"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="清除Cookie"/>
+
+            </RelativeLayout>
+
+            <!--消息通知设置-->
+            <RelativeLayout
+                android:id="@+id/rlSettingNotification"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_bottom_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_bottom_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="消息通知设置"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="28dp"
+                android:paddingTop="4dp"
+                android:text="其他选项"
+                android:textColor="#777777"
+                android:textSize="12sp"/>
+
+            <!--用户反馈-->
+            <RelativeLayout
+                android:id="@+id/rlSettingFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_top_height"
+                android:background="@drawable/usercenter_item_top_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="用户反馈"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+            </RelativeLayout>
+
+            <!--检查更新-->
+            <RelativeLayout
+                android:id="@+id/rlSettingUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="检查更新"/>
+
+                <TextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="20dp"
+                    android:text="v1.0"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+
+            </RelativeLayout>
+
+            <!--清理缓存-->
+            <RelativeLayout
+                android:id="@+id/rlCleanCache"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="清理图片缓存"/>
+
+                <TextView
+                    android:id="@+id/tvCacheSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="20dp"
+                    android:text="@string/being_statistics"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+            <!--关于-->
+            <RelativeLayout
+                android:id="@+id/rlSettingAbout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_bottom_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_bottom_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="关于"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+

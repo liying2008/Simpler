@@ -1,0 +1,55 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rvImageList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="?android:attr/actionBarSize"/>
+
+        <RelativeLayout
+            android:id="@+id/rlBottom"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/toolbar_bg"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/tvAlbumSelected"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:clickable="true"
+                android:drawablePadding="4dp"
+                android:drawableRight="@drawable/choose_album"
+                android:ellipsize="marquee"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:text="全部图片"
+                android:textAllCaps="false"
+                android:textColor="@color/album_select_text_color"
+                android:textSize="16sp"/>
+
+        </RelativeLayout>
+        <!--Toolbar阴影效果-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rlBottom"
+            android:background="@drawable/toolbar_bg_shadow"/>
+    </RelativeLayout>
+
+    <cc.duduhuo.imageselector.widget.PicViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black"
+        android:visibility="gone"/>
+</FrameLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:id="@+id/rlOp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/popup_window_mode_bg">
+
+            <TextView
+                android:id="@+id/tvOpTitle"
+                android:layout_width="match_parent"
+                android:layout_height="27dp"
+                android:background="@drawable/popup_window_mask_top"
+                android:gravity="center_vertical"
+                android:paddingLeft="12dp"
+                android:text="@string/select_op"
+                android:textColor="#CACACA"
+                android:textSize="13sp"/>
+
+            <View
+                android:id="@+id/divider_0"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/tvOpTitle"
+                android:background="#EEEEEE"/>
+
+            <!--查看原微博，有则显示，无则隐藏-->
+            <LinearLayout
+                android:id="@+id/llRetweetedStatus"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/divider_0"
+                android:background="@drawable/selector_status_op_item_middle"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/view_retweeted_status"
+                    android:textColor="#6E6E6E"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/llRetweetedStatus"
+                android:background="#F6F6F6"/>
+
+            <!--收藏微博-->
+            <LinearLayout
+                android:id="@+id/llMarkStatus"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/divider_1"
+                android:background="@drawable/selector_status_op_item_middle"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:id="@+id/tvMark"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/mark_status"
+                    android:textColor="#6E6E6E"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/llMarkStatus"
+                android:background="#F6F6F6"/>
+            <!--分享微博-->
+            <LinearLayout
+                android:id="@+id/llShareStatus"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/divider_2"
+                android:background="@drawable/selector_status_op_item_middle"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/share_status"
+                    android:textColor="#6E6E6E"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/divider_3"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@id/llShareStatus"
+                android:background="#F6F6F6"/>
+
+            <!--复制微博内容-->
+            <LinearLayout
+                android:id="@+id/llCopyStatus"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_below="@id/divider_3"
+                android:background="@drawable/selector_status_op_item_bottom"
+                android:orientation="horizontal"
+                android:paddingLeft="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="@string/copy_status_text"
+                    android:textColor="#6E6E6E"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="19dp"
+            android:background="@drawable/arrow"/>
+    </RelativeLayout>
+</ScrollView>

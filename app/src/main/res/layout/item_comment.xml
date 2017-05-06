@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:id="@+id/llItem"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/selector_comment_bg"
+              android:clickable="true"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civHead"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:src="@drawable/usercenter_head_default"/>
+
+        <TextView
+            android:id="@+id/tvDel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="12dp"
+            android:text="@string/delete"
+            android:textColor="@color/delete_text_color"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_toLeftOf="@id/tvDel"
+            android:layout_toRightOf="@id/civHead"
+            android:clickable="true"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/wb_user"
+            android:textSize="12sp"
+            tools:text="独毒火"/>
+
+        <TextView
+            android:id="@+id/tvCreatedAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvUser"
+            android:layout_toRightOf="@id/civHead"
+            android:paddingLeft="10dp"
+            android:paddingTop="6dp"
+            android:textColor="@color/wb_time"
+            android:textSize="10sp"
+            tools:text="23分钟前"/>
+
+        <TextView
+            android:id="@+id/tvSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvUser"
+            android:layout_toRightOf="@id/tvCreatedAt"
+            android:paddingLeft="10dp"
+            android:paddingTop="6dp"
+            android:textColor="@color/wb_source"
+            android:textSize="10sp"
+            tools:text="weibo.com"/>
+
+        <ImageView
+            android:id="@+id/ivAvatarVip"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="-12dp"
+            android:layout_marginTop="32dp"
+            android:layout_toRightOf="@id/civHead"
+            android:src="@drawable/avatar_vip"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:lineSpacingMultiplier="1.2"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:textColor="@color/wb_user"
+        android:textSize="14sp"
+        tools:text="Simpler"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/divider_background"/>
+</LinearLayout>

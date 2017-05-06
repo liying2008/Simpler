@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvGone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcfcfc"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="10dp"
+        android:textColor="@color/wb_text"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/llStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fcfcfc"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <!--微博头部信息，包括头像、昵称、来源、时间、其他操作按钮-->
+        <include layout="@layout/content_status_head"/>
+
+        <TextView
+            android:id="@+id/tvText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="1.2"
+            android:text=""
+            android:textColor="@color/wb_text"
+            android:textSize="14sp"/>
+
+        <!--图片布局-->
+        <include
+            layout="@layout/content_pics"
+            android:visibility="gone"/>
+        <!--单张图片显示-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <ImageView
+                android:id="@+id/ivSinglePic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:transitionName="image"/>
+
+            <ImageView
+                android:id="@+id/ivGifTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivSinglePic"
+                android:layout_alignRight="@id/ivSinglePic"
+                android:src="@drawable/timeline_image_gif"/>
+
+            <ImageView
+                android:id="@+id/ivLongTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivSinglePic"
+                android:layout_alignRight="@id/ivSinglePic"
+                android:src="@drawable/timeline_image_longimage"/>
+        </RelativeLayout>
+        <!--视频布局-->
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/rlVideo"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="150dp"-->
+        <!--android:visibility="gone">-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/ivVideoShot"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@drawable/loading_pic"/>-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:src="@drawable/multimedia_videocard_play"/>-->
+        <!--</RelativeLayout>-->
+        <!--被转发的原微博-->
+        <include layout="@layout/content_retweeted_status"/>
+
+        <!--原微博被作者删除-->
+        <LinearLayout
+            android:id="@+id/llRetweetedGone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/retweeted_status_bg"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvGoneInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center_vertical"
+                android:lineSpacingMultiplier="1.2"
+                android:textColor="@color/wb_retweeted_text"
+                android:textSize="12sp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPoi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:drawableLeft="@drawable/ic_add_location_active"
+            android:drawablePadding="4dp"
+            android:gravity="center_vertical"
+            android:text="东北大学浑南校区图书馆"
+            android:textSize="10sp"
+            android:visibility="gone"/>
+
+        <include layout="@layout/content_counts"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="@android:color/transparent"/>
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--TitleBar返回按钮-->
+    <style name="titlebar_back_textview">
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/title_back</item>
+        <item name="android:textColor">@color/title_back_text_color</item>
+        <item name="android:textSize">@dimen/title_btn_text_size</item>
+    </style>
+
+    <style name="titlebar_cancel_btn">
+        <item name="android:text">@string/cancel</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/selector_cancel_button</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#383838</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="menu_title_text">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:textColor">@color/menu_title_text_color</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@color/menu_title_bg</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">27dp</item>
+    </style>
+
+    <style name="menu_item_text">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textColor">@color/menu_item_text_color</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+    </style>
+
+    <style name="user_home_page_list_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">28dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#555555</item>
+    </style>
+
+    <style name="notification_badge_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:background">@drawable/notification_icon</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

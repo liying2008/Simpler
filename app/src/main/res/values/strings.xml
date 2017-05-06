@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">Simpler</string>
+    <string name="copyright">Copyright 2017 LiYing All Rights Reserved</string>
+    <string name="my_email">liruoer2008@yeah.net</string>
+    <string name="my_github">https://github.com/liying2008</string>
+    <string name="my_website">http://duduhuo.cc/</string>
+    <string name="version_name_prefix">v%s</string>
+    <string name="feedback_start">#%1$s意见反馈# @独毒火 v%2$s And Android %3$s。</string>
+    <string name="third_open">开源相关</string>
+    <string name="share_to">分享到</string>
+    <string name="share_description">%1$s是一款轻量级的第三方微博应用，具有微博的基础功能，兼有外观优雅，运行流畅，内存占用低，省电省流量等特点。下载地址：http://duduhuo.cc/ </string>
+
+    <string name="checking_update">正在查找新版本…</string>
+    <string name="check_update_failure">检查更新失败</string>
+    <string name="no_new_version">当前版本已是最新</string>
+    <string name="downloading">正在下载…</string>
+
+    <string name="notify_from_simpler">点击查看消息</string>
+    <string name="notify_new_followers">新增%d个新粉丝</string>
+    <string name="notify_new_cmts">收到%d条新评论</string>
+    <string name="notify_new_mention_status">发现%d条新提及你的微博</string>
+    <string name="notify_new_mention_cmt">发现%d条新提及你的评论</string>
+    <string name="notify_new_dm">收到%d条新私信</string>
+    <string name="notify_new_msg">收到%d条新未关注人私信</string>
+
+    <string name="title_login">登录</string>
+    <string name="title_back">返回</string>
+    <string name="title_search">搜索</string>
+    <string name="title_user_center">个人中心</string>
+    <string name="title_third_open">开源相关</string>
+    <string name="title_search_users">相关用户</string>
+    <string name="title_update_remark">更改备注</string>
+    <string name="title_manager_group">管理分组</string>
+    <string name="title_edit_group">编辑分组</string>
+    <string name="title_add_group">创建分组</string>
+    <string name="title_search_statuses">相关微博</string>
+    <string name="title_hot_statuses">热门微博</string>
+    <string name="title_search_topics">相关话题微博</string>
+    <string name="title_web_wb">网页版微博</string>
+    <string name="in_operation">正在操作…</string>
+    <string name="being_statistics">正在统计…</string>
+    <string name="clearing_image_cache">正在清理图片缓存…</string>
+    <string name="clear_done">清理完成</string>
+    <string name="clear_error">清理失败</string>
+    <string name="wb_login">用微博帐号登录</string>
+    <string name="has_not_logined">您尚未登录！</string>
+    <string name="add_another_account">绑定另一帐号</string>
+    <string name="all">全部微博</string>
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
+    <string name="logout">退出登录</string>
+    <string name="title_switch_account">切换帐号</string>
+    <string name="title_message">消息</string>
+    <string name="add_new_account">添加新帐号</string>
+    <string name="wb_followers">粉丝</string>
+    <string name="wb_friends">关注</string>
+    <string name="wb_nearby">周边动态</string>
+    <string name="app_settings">应用设置</string>
+    <string name="app_display_settings">显示设置</string>
+    <string name="app_notification_settings">消息通知设置</string>
+    <string name="app_about">关于</string>
+    <string name="app_about_me">关于作者</string>
+    <string name="wb_post">发微博</string>
+
+    <string name="delete">删除</string>
+    <string name="deleted">已删除</string>
+    <string name="delete_failure">删除失败</string>
+
+    <string name="finish">已完成</string>
+    <string name="comment_failure">评论失败</string>
+    <string name="reply_failure">回复评论失败</string>
+    <string name="replied">已回复</string>
+    <string name="repost_failure">转发失败</string>
+
+    <string name="wb_loading_info">正在连接微博服务器，请稍候。</string>
+    <string name="querying_groups">正在获取分组信息…</string>
+    <string name="web_view_loading">正在加载…</string>
+    <string name="wb_reply_comment">回复评论</string>
+    <string name="wb_copy_comment">复制评论</string>
+    <string name="video_copy_video_url">复制视频下载链接</string>
+    <string name="video_copy_web_url">复制视频播放页面链接</string>
+    <string name="open_in_browser">在浏览器中打开</string>
+    <string name="copy_web_url">复制网页链接</string>
+    <string name="refresh">刷新</string>
+    <string name="select_op">选择操作</string>
+    <string name="view_retweeted_status">查看原微博</string>
+
+    <string name="mark_status">收藏微博</string>
+    <string name="mark_none">没有收藏微博</string>
+    <string name="unmark_status">取消收藏</string>
+    <string name="get_mark_failure">获取收藏结果失败</string>
+    <string name="marked">已收藏</string>
+    <string name="mark_failure_prefix">收藏失败：%s</string>
+    <string name="unmarked">已取消收藏</string>
+    <string name="unmark_failure_prefix">取消收藏失败：%s</string>
+
+    <string name="share_status">分享微博</string>
+    <string name="copy_status_text">复制微博内容</string>
+    <string name="copied">已复制</string>
+    <string name="network_unavailable">当前无网络连接，请检查您的网络设置。</string>
+
+    <string name="at_user_screen_name">\@%s</string>
+
+    <string name="bind_accounts_num">已绑定&#160;%d&#160;个微博帐号</string>
+    <string name="account_switch_to">帐号已切换至：%s</string>
+
+    <string name="cookie_saved">Cookie已保存</string>
+
+    <string name="title_followers">%s的粉丝</string>
+    <string name="title_friends">%s的关注</string>
+    <string name="title_statuses">%s的微博</string>
+    <string name="title_favorites">%s的收藏</string>
+    <string name="title_info">%s的信息</string>
+    <string name="title_album">%s的相册</string>
+    <string name="failed_to_get_followers_info">获取粉丝信息失败</string>
+    <string name="failed_to_get_friends_info">获取关注信息失败</string>
+    <string name="failed_to_get_user_info">获取用户信息失败</string>
+    <string name="user_does_not_exists">用户不存在</string>
+
+    <string name="pay_attention_to_him">关注他</string>
+    <string name="pay_attention_to_her">关注她</string>
+    <string name="pay_attention_to_him_or_her">关注他/她</string>
+    <string name="not_pay_attention">取消关注</string>
+    <string name="pay_attention_ok">已关注</string>
+    <string name="pay_attention_prefix">已关注：%s</string>
+    <string name="pay_attention_failure_prefix">关注失败：%s</string>
+    <string name="not_pay_attention_prefix">已取消关注：%s</string>
+    <string name="not_pay_attention_failure_prefix">取消关注失败：%s</string>
+    <string name="add_to_group_failure_prefix">添加到分组失败：%s</string>
+
+    <string name="no_cookie">尚未获取Cookie</string>
+    <string name="cookie_clear">Cookie已清除</string>
+    <string name="get_web_wb_cookie">请登录网页版微博以获取Cookie。</string>
+    <string name="get_web_wb_cookie_to_hot_topic">登录网页版微博获取Cookie后可以查看热门话题。</string>
+    <string name="update_web_wb_cookie">Cookie已过期，请重新登录网页版微博以更新Cookie。</string>
+    <string name="cannot_view_pic">暂时无法查看图片。</string>
+    <string name="cannot_fetch_video_real_url">无法获取视频播放地址。</string>
+
+    <string name="search_failure">搜索失败</string>
+    <string name="search_no_result">没有搜索结果</string>
+    <string name="resolve_result_failure">解析失败</string>
+    <string name="net_failure">查询失败</string>
+    <string name="keyword_is_empty">搜索关键词为空</string>
+
+    <string name="unable_to_load_user_info">无法加载用户信息，请检查您的网络设置。</string>
+    <string name="loading_groups_failed">加载分组失败，请检查您的网络设置。</string>
+    <string name="loading_statuses_failed">加载微博失败</string>
+
+    <string name="pictures_no_more_than_9">图片总数不能超过9张</string>
+
+    <string name="posting_status">正在发布微博…</string>
+    <string name="post_content_empty">发布内容不能为空</string>
+    <string name="post_status_success">发布成功</string>
+    <string name="post_status_failure">微博发布失败</string>
+    <string name="post_pics_failure">图片上传失败</string>
+
+    <string name="location_running">正在定位…</string>
+    <string name="location_ok">已定位</string>
+    <string name="location_type_network_exception">定位失败，请检查网络是否通畅</string>
+    <string name="location_type_criteria_exception">定位失败，请检查设备是否处于飞行模式或网络连接失败</string>
+    <string name="location_type_server_error">定位失败，请检查设备是否禁用获取位置信息权限</string>
+
+    <string name="draft_saved">草稿已保存</string>
+    <string name="draft_delete">删除草稿</string>
+    <string name="no_drafts">没有草稿</string>
+
+    <string name="remark_cannot_null">备注不能为空</string>
+    <string name="remark_updating">正在更新备注…</string>
+    <string name="remark_update_success">备注修改成功</string>
+    <string name="remark_update_failure">备注修改失败</string>
+
+    <string name="avatar_uploading">正在上传头像…</string>
+    <string name="avatar_upload_failure">头像上传失败</string>
+    <string name="avatar_upload_success">头像上传成功</string>
+</resources>

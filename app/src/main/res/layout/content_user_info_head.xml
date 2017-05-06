@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/usercenter_item_top_bg">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civHeadIcon"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/usercenter_photo_fore"
+            android:clickable="true"
+            android:padding="0.5dp"
+            android:src="@drawable/usercenter_head_default"/>
+
+        <ImageView
+            android:id="@+id/ivAvatarVip"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="-16dp"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@id/civHeadIcon"
+            android:src="@drawable/avatar_vip"/>
+
+        <TextView
+            android:id="@+id/tvUploadPic"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginLeft="-26dp"
+            android:layout_marginTop="46dp"
+            android:layout_toRightOf="@id/civHeadIcon"
+            android:background="@drawable/selector_ic_edit_pic"
+            android:clickable="true"/>
+
+        <RelativeLayout
+            android:id="@+id/rlUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/civHeadIcon"
+            android:layout_marginTop="8dp"
+            android:paddingLeft="28dp"
+            android:paddingRight="28dp">
+
+            <TextView
+                android:id="@+id/tvScreenName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="marquee"
+                android:lines="1"
+                android:text="Simpler"
+                android:textColor="#555"
+                android:textSize="14sp"/>
+
+            <ImageView
+                android:id="@+id/ivGender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@id/tvScreenName"
+                android:src="@drawable/gender_boy_imv"/>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rlUser"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="6dp"
+            android:ellipsize="marquee"
+            android:lines="1"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:text="Simpler"
+            android:textColor="#8e8e8e"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvLocation"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="marquee"
+            android:gravity="center"
+            android:lines="2"
+            android:paddingLeft="18dp"
+            android:paddingRight="18dp"
+            android:text="Simpler"
+            android:textColor="#7e7e7e"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="0.5dp"
+        android:background="@drawable/usercenter_item_bottom_bg"
+        android:paddingLeft="11.5dp"
+        android:paddingRight="11.5dp">
+
+        <LinearLayout
+            android:id="@+id/llFollowers"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/usercenter_info_bottom_left_selector"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:paddingTop="4dp"
+                android:text="粉丝"
+                android:textColor="#555"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvFollowersCount"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:gravity="center"
+                android:paddingBottom="4dp"
+                android:text="0"
+                android:textColor="#555"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/listview_top_and_bottom_divider"/>
+
+        <LinearLayout
+            android:id="@+id/llFriends"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/usercenter_info_bottom_mid_selector"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:paddingTop="4dp"
+                android:text="关注"
+                android:textColor="#555"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvFriendsCount"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:gravity="center"
+                android:paddingBottom="4dp"
+                android:text="0"
+                android:textColor="#555"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="match_parent"
+            android:background="@color/listview_top_and_bottom_divider"/>
+
+        <LinearLayout
+            android:id="@+id/llStatuses"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:background="@drawable/usercenter_info_bottom_right_selector"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:gravity="center"
+                android:paddingTop="4dp"
+                android:text="微博"
+                android:textColor="#555"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvStatusesCount"
+                android:layout_width="match_parent"
+                android:layout_height="28dp"
+                android:gravity="center"
+                android:paddingBottom="4dp"
+                android:text="0"
+                android:textColor="#555"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </LinearLayout>
+</merge>

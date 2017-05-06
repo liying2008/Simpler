@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.WBPostActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:text="@string/wb_post"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+
+        <TextView
+            android:id="@+id/tvPost"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/selector_titlebar_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="发布"
+            android:textColor="@color/title_back_text_color"
+            android:textSize="@dimen/title_btn_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <!--表情栏-->
+    <FrameLayout
+        android:id="@+id/flEmoticon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dialog_bg_color">
+
+    </FrameLayout>
+
+    <!--底部Toolbar-->
+    <FrameLayout
+        android:id="@+id/rlToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_above="@id/flEmoticon"
+        android:background="@drawable/toolbar_bg"
+        android:clickable="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/selector_ic_post_location"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/ivPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/selector_ic_post_photo"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/ivEmoticon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/selector_ic_post_emoticon"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/ivAt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="120dp"
+            android:background="@drawable/selector_ic_post_at"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/ivTopic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="160dp"
+            android:background="@drawable/selector_ic_post_sharp"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/tvVisible"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:drawablePadding="4dp"
+            android:drawableRight="@drawable/choose_visible"
+            android:ellipsize="marquee"
+            android:gravity="center|right"
+            android:text="所有人可见"
+            android:textColor="@color/post_visible_text_color"
+            android:textSize="14sp"/>
+    </FrameLayout>
+
+    <!--Toolbar阴影效果-->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rlToolbar"
+        android:background="@drawable/toolbar_bg_shadow"/>
+
+    <RelativeLayout
+        android:id="@+id/rlPos"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_above="@id/rlToolbar"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_add_location_active"
+            android:drawablePadding="6dp"
+            android:ellipsize="end"
+            android:lines="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="48dp"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tvCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:text="0/140"
+            android:textColor="@color/wb_post_text_count_color_normal"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPhotos"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_above="@id/rlPos"
+        android:overScrollMode="never"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+
+    <EditText
+        android:id="@+id/etContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rvPhotos"
+        android:layout_below="@id/flTitle"
+        android:background="@null"
+        android:gravity="top"
+        android:hint="输入文字"
+        android:lineSpacingMultiplier="1.2"
+        android:padding="10dp"
+        android:text=""
+        android:textColor="#333"
+        android:textColorHint="#888"
+        android:textSize="15sp"/>
+</RelativeLayout>
+
+

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/dialog_bg_color"
+              android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/dialog_title_bg">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:lines="1"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp"
+            android:text="选择文件夹"
+            android:textColor="#383838"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tvCancel"
+            style="@style/titlebar_cancel_btn"
+            android:layout_gravity="end"/>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_background"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvFolderList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

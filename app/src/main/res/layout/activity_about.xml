@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.AboutActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_about"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlLogo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/usercenter_item_global_bg"
+                android:clickable="true">
+
+                <ImageView
+                    android:id="@+id/ivIcon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="14dp"
+                    android:src="@drawable/simpler_512"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivIcon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="20sp"
+                    android:typeface="serif"/>
+
+                <TextView
+                    android:id="@+id/tvUpdateDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="12dp"
+                    android:text="— 更新日期：2016.12.22 —"
+                    android:textColor="#666666"
+                    android:textSize="10dp"/>
+
+                <TextView
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/tvUpdateDate"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="12dp"
+                    android:text="v1.0"
+                    android:textColor="#666666"
+                    android:textSize="10sp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlShare"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_top_height"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/usercenter_item_top_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="分享该应用"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlOpenSource"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="开源地址"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlAboutAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_bottom_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_bottom_selector"
+                android:clickable="true">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="关于作者"/>
+
+                <ImageView
+                    style="@style/settings_list_item_arrow"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tvThirdOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:text="@string/third_open"
+        android:textColor="@color/third_open_text_color"
+        android:clickable="true"
+        android:textSize="12sp"/>
+</RelativeLayout>

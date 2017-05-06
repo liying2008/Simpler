@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              tools:showIn="@layout/activity_user_homepage">
+
+    <include layout="@layout/content_user_info_head"/>
+
+    <RelativeLayout
+        android:id="@+id/rlSwitchAccount"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_single_height"
+        android:background="@drawable/usercenter_item_global_selector"
+        android:clickable="true">
+
+        <TextView
+            style="@style/user_home_page_list_text"
+            android:text="切换帐号"/>
+
+        <ImageView
+            style="@style/user_home_page_list_arrow"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlMyPhotos"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_top_height"
+        android:background="@drawable/usercenter_item_top_selector"
+        android:clickable="true">
+
+        <TextView
+            style="@style/user_home_page_list_text"
+            android:text="个人相册"/>
+
+        <ImageView
+            style="@style/user_home_page_list_arrow"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlMyInfo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_middle_height"
+        android:layout_marginTop="0.5dp"
+        android:background="@drawable/usercenter_item_middle_selector"
+        android:clickable="true">
+
+        <TextView
+            style="@style/user_home_page_list_text"
+            android:text="个人信息"/>
+
+        <ImageView
+            style="@style/user_home_page_list_arrow"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlGroupMgr"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_middle_height"
+        android:layout_marginTop="0.5dp"
+        android:background="@drawable/usercenter_item_middle_selector"
+        android:clickable="true">
+
+        <TextView
+            style="@style/user_home_page_list_text"
+            android:text="分组管理"/>
+
+        <ImageView
+            style="@style/user_home_page_list_arrow"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlNearby"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_bottom_height"
+        android:layout_marginTop="0.5dp"
+        android:background="@drawable/usercenter_item_bottom_selector"
+        android:clickable="true">
+
+        <TextView
+            style="@style/user_home_page_list_text"
+            android:text="周边动态"/>
+
+        <ImageView
+            style="@style/user_home_page_list_arrow"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvLogout"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/usercenter_logout_ok_btn_selector"
+        android:clickable="true"
+        android:gravity="center"
+        android:text="@string/logout"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"/>
+</LinearLayout>

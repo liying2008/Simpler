@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#CE4540</color>
+    <color name="colorPrimaryDark">#CE4540</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="divider_background">#14000000</color>
+    <color name="title_back_text_color">#eeeeee</color>
+    <!--Dialog Item 背景-->
+    <color name="dialog_item_bg_normal">#fcfcfc</color>
+    <color name="dialog_item_bg_pressed">#efefef</color>
+    <color name="dialog_btn_normal">#eeeeee</color>
+    <color name="dialog_bg_color">#F5F5F5</color>
+
+    <!--文件夹条目背景-->
+    <color name="folder_item_bg_normal">#fcfcfc</color>
+    <color name="folder_item_bg_pressed">#efefef</color>
+</resources>

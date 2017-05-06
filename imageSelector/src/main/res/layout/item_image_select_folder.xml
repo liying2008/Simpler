@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rlItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_folder_item_bg"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/ivFolder"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginLeft="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_default_image"/>
+
+        <ImageView
+            android:id="@+id/ivIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="4dp"
+            android:src="@drawable/import_select"/>
+
+        <TextView
+            android:id="@+id/tvFolderName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:layout_toLeftOf="@id/ivIndicator"
+            android:layout_toRightOf="@id/ivFolder"
+            android:ellipsize="marquee"
+            android:lines="1"
+            android:text="@string/all_images"
+            android:textColor="#333"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tvImageNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvFolderName"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@id/ivIndicator"
+            android:layout_toRightOf="@id/ivFolder"
+            android:ellipsize="marquee"
+            android:lines="1"
+            android:text="共444张"
+            android:textColor="#777"
+            android:textSize="12sp"/>
+    </RelativeLayout>
+    <!--Item分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dip"
+        android:background="@color/divider_background"/>
+</LinearLayout>

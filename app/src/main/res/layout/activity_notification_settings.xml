@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/activity_background"
+    tools:context="cc.duduhuo.simpler.activity.NotificationSettingsActivity">
+
+    <FrameLayout
+        android:id="@+id/flTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/titlebar_bg">
+
+        <TextView
+            android:id="@+id/tvBack"
+            style="@style/titlebar_back_textview"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/selector_titlebar_btn"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_notification_settings"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/title_text_size"/>
+    </FrameLayout>
+
+    <!--标题栏阴影-->
+    <include layout="@layout/content_head_shadow"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/flTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--消息通知-->
+            <RelativeLayout
+                android:id="@+id/rlMessage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_top_height"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/usercenter_item_top_selector"
+                android:clickable="false">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="消息通知"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchMessage"
+                    style="@style/settings_list_item_switch"/>
+            </RelativeLayout>
+
+            <!--私信通知-->
+            <RelativeLayout
+                android:id="@+id/rlPrivateLetter"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_middle_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_middle_selector"
+                android:clickable="false">
+
+                <TextView
+                    style="@style/settings_list_item_text"
+                    android:text="私信通知"/>
+
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/switchPrivateLetter"
+                    style="@style/settings_list_item_switch"/>
+            </RelativeLayout>
+
+            <!--通知间隔-->
+            <RelativeLayout
+                android:id="@+id/rlNotifyInterval"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item_bottom_height"
+                android:layout_marginTop="0.5dp"
+                android:background="@drawable/usercenter_item_bottom_selector"
+                android:clickable="true">
+
+                <TextView
+                    android:id="@+id/tvNotifyIntervalMsg"
+                    style="@style/settings_list_item_text"
+                    android:text="通知时间间隔"/>
+
+                <ImageView
+                    android:id="@+id/ivArrow"
+                    style="@style/settings_list_item_arrow"/>
+
+                <TextView
+                    android:id="@+id/tvNotifyInterval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/ivArrow"
+                    android:text="30分钟"
+                    android:textColor="#9e9e9e"
+                    android:textSize="12sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
+

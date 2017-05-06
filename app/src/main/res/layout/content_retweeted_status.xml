@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llRetweetedStatus"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@color/retweeted_status_bg"
+    android:clickable="true"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <TextView
+        android:id="@+id/tvRetweetedUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:lines="1"
+        android:text="\@独毒火"
+        android:textColor="@color/retweeted_user_color"
+        android:textSize="14sp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"/>
+
+    <TextView
+        android:id="@+id/tvRetweetedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:lineSpacingMultiplier="1.2"
+        android:text=""
+        android:textColor="@color/wb_retweeted_text"
+        android:textSize="12sp"/>
+
+    <!--原微博图片布局-->
+    <include
+        layout="@layout/content_retweeted_pics"
+        android:visibility="gone"/>
+    <!--单张图片显示-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:transitionName="image">
+
+        <ImageView
+            android:id="@+id/ivRetweetedSinglePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:maxHeight="@dimen/pic_max_height"/>
+
+        <ImageView
+            android:id="@+id/ivRetweetedGifTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ivRetweetedSinglePic"
+            android:layout_alignRight="@id/ivRetweetedSinglePic"
+            android:src="@drawable/timeline_image_gif"/>
+
+        <ImageView
+            android:id="@+id/ivRetweetedLongTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/ivRetweetedSinglePic"
+            android:layout_alignRight="@id/ivRetweetedSinglePic"
+            android:src="@drawable/timeline_image_longimage"/>
+    </RelativeLayout>
+    <!--视频布局-->
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/rlRetweetedVideo"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="150dp"-->
+    <!--android:visibility="gone">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/ivRetweetedVideoShot"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:src="@drawable/loading_pic"/>-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:src="@drawable/multimedia_videocard_play"/>-->
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--评论数-->
+        <LinearLayout
+            android:id="@+id/llRetweetedComments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/tvCommentMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评论 "
+                android:textColor="@color/retweeted_count_text_color"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tvRetweetedCommentsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7816"
+                android:textColor="@color/retweeted_count_text_color"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <!--转发数-->
+        <LinearLayout
+            android:id="@+id/llRetweetedReposts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@id/llRetweetedComments"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/tvRetweetedRepostsMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="转发 "
+                android:textColor="@color/retweeted_count_text_color"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tvRetweetedRepostsCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="34444"
+                android:textColor="@color/retweeted_count_text_color"
+                android:textSize="10sp"/>
+        </LinearLayout>
+
+        <!--表态数-->
+        <LinearLayout
+            android:id="@+id/llRetweetedAttitudes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@id/llRetweetedReposts"
+            android:clickable="true">
+
+            <TextView
+                android:id="@+id/tvRetweetedAttitudesMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赞 "
+                android:textColor="@color/retweeted_count_text_color"
+                android:textSize="10sp"/>
+
+            <TextView
+                android:id="@+id/tvRetweetedAttitudesCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234"
+                android:textColor="@color/retweeted_count_text_color"
+                android:textSize="10sp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+
+        
