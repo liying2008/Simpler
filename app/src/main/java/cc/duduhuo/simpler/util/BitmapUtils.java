@@ -45,7 +45,7 @@ public class BitmapUtils {
             Log.w(TAG, "上传图片是GIF图片，上传原图");
             return BitmapFactory.decodeFile(source);
         }
-        BaseSettings.sSettings = SettingsUtil.readSettings(BaseConfig.sUid);
+        BaseSettings.sSettings = SettingsUtil.readSettings(BaseConfig.sUid, false);
         int type = BaseSettings.sSettings.uploadQuality;
         int size = bitmap.getByteCount();
         switch (type) {

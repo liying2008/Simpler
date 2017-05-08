@@ -69,6 +69,11 @@ public class WBLoginActivity extends BaseActivity {
         mSsoHandler.authorizeWeb(new AuthListener());
     }
 
+    @OnClick(R.id.tvAccount)
+    void switchAccount() {
+        startActivity(SwitchAccountActivity.newIntent(this));
+    }
+
     @OnClick(R.id.tvBack)
     public void back() {
         this.finish();

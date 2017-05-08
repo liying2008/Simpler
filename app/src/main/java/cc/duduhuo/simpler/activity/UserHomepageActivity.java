@@ -395,8 +395,7 @@ public class UserHomepageActivity extends BaseActivity {
             @Override
             public void onWeiboException(WeiboException e) {
                 LogUtil.e("LOGOUT", "WeiboException： " + e.getMessage());
-                // 注销失败
-//                setText(R.string.com_sina_weibo_sdk_logout);
+                AppToast.showToast("注销失败");
             }
         });
     }

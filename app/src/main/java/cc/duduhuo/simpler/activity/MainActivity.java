@@ -93,7 +93,7 @@ public class MainActivity extends BaseActivity implements SwipeRefreshLayout.OnR
 
         // 每次刷新微博数
         if (BaseSettings.sSettings == null) {
-            BaseSettings.sSettings = SettingsUtil.readSettings(BaseConfig.sUid);
+            BaseSettings.sSettings = SettingsUtil.readSettings(BaseConfig.sUid, false);
         }
         mRefreshCount = BaseSettings.sSettings.refreshCount;
 

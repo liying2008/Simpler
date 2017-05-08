@@ -41,11 +41,11 @@ public class SplashLoadDataTask extends AsyncTask<Void, Void, Void> {
         String uid = PrefsUtils.getString(Constants.PREFS_CUR_UID, "");
         BaseConfig.sUid = uid;
         // 设置当前帐号
-        BaseConfig.sAccount = AccountUtil.readAccount(uid);
+        BaseConfig.sAccount = AccountUtil.readAccount(uid, false);
         // 设置当前应用设置
-        BaseSettings.sSettings = SettingsUtil.readSettings(uid);
+        BaseSettings.sSettings = SettingsUtil.readSettings(uid, false);
         if (!TextUtils.isEmpty(uid)) {
-            BaseConfig.sAccessToken = AccessTokenKeeper.readAccessToken(uid);
+            BaseConfig.sAccessToken = AccessTokenKeeper.readAccessToken(uid, false);
         }
     }
 

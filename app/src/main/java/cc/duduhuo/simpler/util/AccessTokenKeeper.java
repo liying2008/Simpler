@@ -26,18 +26,17 @@ public class AccessTokenKeeper {
     public static void writeAccessToken(Oauth2AccessToken token) {
         String uid = token.getUid();
         Account account = new Account(uid, token.getToken(), token.getExpiresTime(), token.getRefreshToken());
-        App.userServices.insertOrUpdateAccount(account);
-        SettingsUtil.insertSettingsSafely(uid);
-        // 设置当前的使用的AccessToken
-        BaseConfig.sAccessToken = token;
         // 设置当前的用户ID
         BaseConfig.sUid = uid;
+        AccountUtil.updateOauth2AccessToken(token);
+        SettingsUtil.insertSettingsSafely(uid);
+
         if (BaseConfig.sAccount == null) {
             // 设置当前帐户
             BaseConfig.sAccount = account;
         }
         // 设置当前应用设置
-        BaseSettings.sSettings = SettingsUtil.readSettings(uid);
+        BaseSettings.sSettings = SettingsUtil.readSettings(uid, false);
         // 保存当前用户ID
         PrefsUtils.putString(Constants.PREFS_CUR_UID, uid);
     }
@@ -45,23 +44,34 @@ public class AccessTokenKeeper {
     /**
      * 从 数据库 读取 Token 信息。
      *
-     * @param uid 用户Id
+     * @param uid     用户Id
+     * @param refresh 是否强制从数据库中读取
      * @return 返回 Token 对象
      */
-    public static Oauth2AccessToken readAccessToken(String uid) {
+    public static Oauth2AccessToken readAccessToken(String uid, boolean refresh) {
         Oauth2AccessToken token = new Oauth2AccessToken();
-        if (BaseConfig.sAccount != null) {
-            token.setUid(BaseConfig.sAccount.uid);
-            token.setToken(BaseConfig.sAccount.accessToken);
-            token.setRefreshToken(BaseConfig.sAccount.refreshToken);
-            token.setExpiresTime(BaseConfig.sAccount.expiresIn);
-        } else {
+        if (refresh) {
             Account account = App.userServices.getAccountById(uid);
             if (account != null) {
                 token.setUid(account.uid);
                 token.setToken(account.accessToken);
                 token.setRefreshToken(account.refreshToken);
                 token.setExpiresTime(account.expiresIn);
+            }
+        } else {
+            if (BaseConfig.sAccount != null) {
+                token.setUid(BaseConfig.sAccount.uid);
+                token.setToken(BaseConfig.sAccount.accessToken);
+                token.setRefreshToken(BaseConfig.sAccount.refreshToken);
+                token.setExpiresTime(BaseConfig.sAccount.expiresIn);
+            } else {
+                Account account = App.userServices.getAccountById(uid);
+                if (account != null) {
+                    token.setUid(account.uid);
+                    token.setToken(account.accessToken);
+                    token.setRefreshToken(account.refreshToken);
+                    token.setExpiresTime(account.expiresIn);
+                }
             }
         }
         return token;

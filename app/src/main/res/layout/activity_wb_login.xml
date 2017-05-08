@@ -24,9 +24,24 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:paddingLeft="90dp"
+            android:paddingRight="90dp"
             android:text="@string/title_login"
             android:textColor="@android:color/white"
             android:textSize="@dimen/title_text_size"/>
+
+        <TextView
+            android:id="@+id/tvAccount"
+            android:layout_width="88dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="@drawable/selector_titlebar_btn"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="切换帐号"
+            android:textColor="@color/title_back_text_color"
+            android:textSize="@dimen/title_btn_text_size"/>
+
     </FrameLayout>
 
     <!--标题栏阴影-->

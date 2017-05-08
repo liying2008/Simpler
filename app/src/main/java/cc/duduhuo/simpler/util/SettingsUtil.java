@@ -18,14 +18,19 @@ public class SettingsUtil {
     /**
      * 读取当前设置信息
      *
-     * @param uid 用户Id
+     * @param uid     用户Id
+     * @param refresh 是否强制从数据库读取
      * @return 当前设置
      */
-    public static Settings readSettings(String uid) {
-        if (BaseSettings.sSettings != null) {
-            return BaseSettings.sSettings;
-        } else {
+    public static Settings readSettings(String uid, boolean refresh) {
+        if (refresh) {
             return App.settingsServices.getSettingsById(uid);
+        } else {
+            if (BaseSettings.sSettings != null) {
+                return BaseSettings.sSettings;
+            } else {
+                return App.settingsServices.getSettingsById(uid);
+            }
         }
     }
 

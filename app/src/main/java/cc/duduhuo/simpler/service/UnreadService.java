@@ -109,7 +109,7 @@ public class UnreadService extends Service implements RemindOp.OnRemindOpResultL
     }
 
     private void resetTheTime() {
-        SettingsUtil.readSettings(BaseConfig.sUid);
+        SettingsUtil.readSettings(BaseConfig.sUid, false);
         Settings settings = BaseSettings.sSettings;
         if (settings != null) {
             AlarmManager am = (AlarmManager) getSystemService(ALARM_SERVICE);

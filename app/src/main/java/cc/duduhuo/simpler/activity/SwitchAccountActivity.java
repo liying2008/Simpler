@@ -21,10 +21,15 @@ import cc.duduhuo.simpler.app.App;
 import cc.duduhuo.simpler.base.BaseActivity;
 import cc.duduhuo.simpler.config.BaseConfig;
 import cc.duduhuo.simpler.bean.Account;
+import cc.duduhuo.simpler.config.BaseSettings;
 import cc.duduhuo.simpler.listener.impl.RecyclerItemClickListener;
+import cc.duduhuo.simpler.service.UnreadService;
+import cc.duduhuo.simpler.service.notifier.Notifier;
 import cc.duduhuo.simpler.util.AccessTokenKeeper;
 import cc.duduhuo.simpler.config.Constants;
+import cc.duduhuo.simpler.util.AccountUtil;
 import cc.duduhuo.simpler.util.PrefsUtils;
+import cc.duduhuo.simpler.util.SettingsUtil;
 
 public class SwitchAccountActivity extends BaseActivity {
     /** 已经绑定的账户数量 */
@@ -105,20 +110,30 @@ public class SwitchAccountActivity extends BaseActivity {
                     return;
                 }
                 // 切换帐号
-                // 设置当前的使用的AccessToken
-                BaseConfig.sAccessToken = AccessTokenKeeper.readAccessToken(account.uid);
                 // 设置当前的用户ID
                 BaseConfig.sUid = account.uid;
                 // 保存当前用户ID
                 PrefsUtils.putString(Constants.PREFS_CUR_UID, account.uid);
+                // 设置当前使用的AccessToken
+                BaseConfig.sAccessToken = AccessTokenKeeper.readAccessToken(account.uid, true);
+                // 设置当前用户帐户
+                BaseConfig.sAccount = AccountUtil.readAccount(account.uid, true);
+                // 设置当前用户设置
+                BaseSettings.sSettings = SettingsUtil.readSettings(account.uid, true);
                 App.getInstance().finishAllActivities();
                 startActivity(MainActivity.newIntent(SwitchAccountActivity.this));
+                Notifier.cancelAll();   // 清空所有通知
+                // 重启消息通知
+                UnreadService.stopService();
+                UnreadService.startService();
+                // 默认Token没有失效
+                BaseConfig.sTokenExpired = false;
                 AppToast.showToast(getString(R.string.account_switch_to, account.name));
             }
 
             @Override
             public void onItemLongClick(View view, int position) {
-
+                // no op
             }
         };
         mRvAccounts.addOnItemTouchListener(new RecyclerItemClickListener(this, mRvAccounts, localListener));

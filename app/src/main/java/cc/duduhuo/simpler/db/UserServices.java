@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.sina.weibo.sdk.auth.Oauth2AccessToken;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,9 +38,9 @@ public class UserServices extends BaseDbService {
      *
      * @param account 帐号信息
      */
-    public void insertOrUpdateAccount(Account account) {
+    public void insertAccount(Account account) {
         SQLiteDatabase db = this.dbHelper.getWritableDatabase();
-        String sql = "INSERT OR REPLACE INTO " + DBInfo.Table.USER_TB_NAME + "(" + Account.UID + ", "
+        String sql = "INSERT INTO " + DBInfo.Table.USER_TB_NAME + "(" + Account.UID + ", "
                 + Account.ACCESS_TOKEN + ", " + Account.EXPIRES_IN + ", " + Account.REFRESH_TOKEN
                 + ") VALUES ('" + account.uid + "','" + account.accessToken + "',"
                 + account.expiresIn + ", '" + account.refreshToken + "');";
@@ -190,6 +192,22 @@ public class UserServices extends BaseDbService {
     }
 
     /**
+     * 更新Oauth2AccessToken
+     *
+     * @param uid   用户Id
+     * @param token Oauth2AccessToken
+     */
+    public void updateOauth2AccessToken(String uid, Oauth2AccessToken token) {
+        SQLiteDatabase db = this.dbHelper.getReadableDatabase();
+        String sql = "UPDATE " + DBInfo.Table.USER_TB_NAME + " SET " + Account.ACCESS_TOKEN + "='"
+                + token.getToken() + "', " + Account.EXPIRES_IN + "=" + token.getExpiresTime()
+                + ", " + Account.REFRESH_TOKEN + "='" + token.getRefreshToken()
+                + "' WHERE " + Account.UID + "='" + uid + "'";
+        db.execSQL(sql);
+        db.close();
+    }
+
+    /**
      * 更新Name
      *
      * @param uid  用户Id
@@ -234,7 +252,7 @@ public class UserServices extends BaseDbService {
     /**
      * 更新用户登录微博的Cookie
      *
-     * @param uid     用户Id
+     * @param uid    用户Id
      * @param cookie Cookie
      */
     public void updateCookie(String uid, String cookie) {

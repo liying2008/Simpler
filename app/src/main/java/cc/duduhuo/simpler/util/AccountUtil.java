@@ -1,5 +1,7 @@
 package cc.duduhuo.simpler.util;
 
+import com.sina.weibo.sdk.auth.Oauth2AccessToken;
+
 import cc.duduhuo.simpler.app.App;
 import cc.duduhuo.simpler.config.BaseConfig;
 import cc.duduhuo.simpler.bean.Account;
@@ -16,19 +18,43 @@ import cc.duduhuo.simpler.bean.Account;
 public class AccountUtil {
     /**
      * 读取当前帐号信息
-     * @param uid 用户Id
+     *
+     * @param uid     用户Id
+     * @param refresh 强制从数据库中读取
      * @return 当前帐号。无当前帐号信息则返回null
      */
-    public static Account readAccount(String uid) {
-        if (BaseConfig.sAccount != null) {
-            return BaseConfig.sAccount;
-        } else {
+    public static Account readAccount(String uid, boolean refresh) {
+        if (refresh) {
             return App.userServices.getAccountById(uid);
+        } else {
+            if (BaseConfig.sAccount != null) {
+                return BaseConfig.sAccount;
+            } else {
+                return App.userServices.getAccountById(uid);
+            }
+        }
+    }
+
+    /**
+     * 更新Oauth2AccessToken
+     *
+     * @param token
+     */
+    public static void updateOauth2AccessToken(Oauth2AccessToken token) {
+        BaseConfig.sAccessToken = token;
+        if (App.userServices.getAccountById(BaseConfig.sUid) == null) {
+            // 同步到数据库
+            Account account = new Account(BaseConfig.sUid, token.getToken(), token.getExpiresTime(), token.getRefreshToken());
+            App.userServices.insertAccount(account);
+        } else {
+            // 同步到数据库
+            App.userServices.updateOauth2AccessToken(BaseConfig.sUid, token);
         }
     }
 
     /**
      * 更新ScreenName
+     *
      * @param screenName
      */
     public static void updateScreenName(String screenName) {
@@ -42,6 +68,7 @@ public class AccountUtil {
 
     /**
      * 更新Name
+     *
      * @param name
      */
     public static void updateName(String name) {
@@ -55,6 +82,7 @@ public class AccountUtil {
 
     /**
      * 更新用户头像地址
+     *
      * @param headUrl
      */
     public static void updateHeadUrl(String headUrl) {
@@ -68,6 +96,7 @@ public class AccountUtil {
 
     /**
      * 更新用户头像缓存路径
+     *
      * @param headCachePath
      */
     public static void updateHeadCachePath(String headCachePath) {
@@ -81,6 +110,7 @@ public class AccountUtil {
 
     /**
      * 更新用户登录的Cookie
+     *
      * @param cookie
      */
     public static void updateCookie(String cookie) {

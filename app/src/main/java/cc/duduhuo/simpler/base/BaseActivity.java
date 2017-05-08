@@ -53,10 +53,10 @@ public class BaseActivity extends AppCompatActivity {
             BaseConfig.sUid = PrefsUtils.getString(Constants.PREFS_CUR_UID, "");
         }
         BaseConfig.sSDCardExist = FileUtils.hasStorage();
-        BaseConfig.sAccount = AccountUtil.readAccount(BaseConfig.sUid);
-        BaseSettings.sSettings = SettingsUtil.readSettings(BaseConfig.sUid);
+        BaseConfig.sAccount = AccountUtil.readAccount(BaseConfig.sUid, false);
+        BaseSettings.sSettings = SettingsUtil.readSettings(BaseConfig.sUid, false);
         if (BaseConfig.sAccessToken == null) {
-            BaseConfig.sAccessToken = AccessTokenKeeper.readAccessToken(BaseConfig.sUid);
+            BaseConfig.sAccessToken = AccessTokenKeeper.readAccessToken(BaseConfig.sUid, false);
         }
     }
 
