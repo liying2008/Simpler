@@ -7,6 +7,7 @@ import com.sina.weibo.sdk.openapi.models.GeoOri;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import cc.duduhuo.simpler.base.BaseActivity;
 import cc.duduhuo.simpler.config.Constants;
 import cc.duduhuo.simpler.net.HttpGetTask;
 import cc.duduhuo.simpler.net.HttpListener;
@@ -28,9 +29,9 @@ public class GeoParser {
      *
      * @param geoOri 微博原始Geo信息
      */
-    public void getAddress(GeoOri geoOri, OnLocationListener locationListener) {
+    public void getAddress(BaseActivity activity, GeoOri geoOri, OnLocationListener locationListener) {
         if (geoOri != null) {
-            getAddress(geoOri.latitude, geoOri.longitude, locationListener);
+            getAddress(activity, geoOri.latitude, geoOri.longitude, locationListener);
         }
     }
 
@@ -40,7 +41,7 @@ public class GeoParser {
      * @param latitude  纬度
      * @param longitude 经度
      */
-    public void getAddress(double latitude, double longitude, final OnLocationListener locationListener) {
+    public void getAddress(BaseActivity activity, double latitude, double longitude, final OnLocationListener locationListener) {
         String url = "http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=" + latitude + "," + longitude + "&output=json&pois=0&ak=" + Constants.BAIDU_LBS_AK;
         HttpGetTask task = new HttpGetTask(false, new HttpListener() {
             @Override
@@ -85,6 +86,7 @@ public class GeoParser {
             }
         });
         task.execute(url, null);
+        activity.registerAsyncTask(activity.getClass(), task);
     }
 
     /**

@@ -43,7 +43,7 @@ public class AvatarOp implements OnAvatarListener {
      */
     @Override
     public void upload(String path) {
-        Bitmap bitmap = BitmapUtils.getUploadImage(path, 4);
+        Bitmap bitmap = BitmapUtils.getUploadImage(path);
         if (bitmap == null) {
             if (mListener != null) {
                 mListener.onFailure("Bitmap为空");

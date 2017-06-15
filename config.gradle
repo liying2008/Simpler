@@ -8,9 +8,9 @@ ext {
             minSdkVersion    : 14,
             targetSdkVersion : 22,
 
-            versionCode      : 2,
-            versionName      : "1.0.1",
-            updateDate       : "— 更新日期：2017.5.8 —",
+            versionCode      : 3,
+            versionName      : "1.0.2",
+            updateDate       : "— 更新日期：2017.6.15 —",
     ]
 
     dependencies = [

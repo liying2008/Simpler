@@ -178,6 +178,11 @@ public class WBStatusesActivity extends BaseActivity {
             // 重新加载微博
             loadStatuses(mMaxId, true);
         }
+    }
 
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(WBStatusesActivity.class);
+        super.onDestroy();
     }
 }

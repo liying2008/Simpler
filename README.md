@@ -1,12 +1,18 @@
-#Simpler#
+# Simpler
+
+[![GitHub release](https://img.shields.io/github/release/liying2008/Simpler.svg)](https://github.com/liying2008/Simpler/releases)
+[![Github Releases](https://img.shields.io/github/downloads/liying2008/Simpler/total.svg)](https://codeload.github.com/liying2008/Simpler/zip/master)
+[![license](https://img.shields.io/github/license/liying2008/Simpler.svg)](https://github.com/liying2008/Simpler/blob/master/LICENSE)
+[![微博](https://img.shields.io/badge/新浪微博-独毒火-orange.svg)](http://weibo.com/neuliying)
+
 ---
 **此项目仅供Android开发学习交流使用，不得用于其他用途。**
 
-[Download APK](http://duduhuo.cc/simpler/apk/simpler_1.0.1.apk)
+[Download APK](https://github.com/liying2008/Simpler/releases/download/v1.0.2/simpler_1.0.2.apk)
 
 编译环境
 ----
-- Android Studio 2.3.1
+- Android Studio 2.3.3
 - Gradle 3.3
 
 ### 说明
@@ -71,20 +77,20 @@ Simpler是一款轻量级的第三方微博应用，具有微博的基础功能�
 
 已知BUG
 -----
-1. 加载GIF图时无法获取加载进度。
+1. 加载GIF图时无法获取加载进度。  
 
 更新日期
 ----
-2017-5-8
+2017-6-15  
 
 当前版本
 ----
-v1.0.1
+v1.0.2  
 
 联系作者
 ----
-新浪微博：[@独毒火][1]  
-邮箱：[liruoer2008@yeah.net][2]  
+新浪微博：[@独毒火](http://weibo.com/neuliying)  
+邮箱：[liruoer2008@yeah.net](mailto:liruoer2008@yeah.net)  
 
 Thanks
 ----
@@ -120,5 +126,3 @@ limitations under the License.
 ```
 
 
-[1]: http://weibo.com/neuliying
-[2]: mailto:liruoer2008@yeah.net

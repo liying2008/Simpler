@@ -219,7 +219,7 @@ public class SearchActivity extends BaseActivity {
                 }
             });
             task.execute(url, mCookie);
-
+            registerAsyncTask(SearchActivity.class, task);
         } else {
             // Cookie为空
             mSwipeRefresh.setRefreshing(false);
@@ -263,5 +263,11 @@ public class SearchActivity extends BaseActivity {
                 mTvClearText.setVisibility(View.VISIBLE);
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(SearchActivity.class);
+        super.onDestroy();
     }
 }

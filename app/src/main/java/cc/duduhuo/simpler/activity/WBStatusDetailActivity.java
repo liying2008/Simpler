@@ -234,4 +234,10 @@ public class WBStatusDetailActivity extends BaseActivity {
         loadComments(0, true, false);
         mSwipeRefresh.setRefreshing(true);
     }
+
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(WBStatusDetailActivity.class);
+        super.onDestroy();
+    }
 }

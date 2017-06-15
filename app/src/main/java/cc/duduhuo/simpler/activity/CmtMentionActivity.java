@@ -244,4 +244,9 @@ public class CmtMentionActivity extends BaseActivity {
         this.finish();
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(CmtMentionActivity.class);
+        super.onDestroy();
+    }
 }

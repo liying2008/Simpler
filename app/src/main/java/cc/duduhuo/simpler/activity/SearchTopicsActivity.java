@@ -151,4 +151,9 @@ public class SearchTopicsActivity extends BaseActivity {
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(SearchTopicsActivity.class);
+        super.onDestroy();
+    }
 }

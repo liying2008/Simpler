@@ -37,9 +37,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true  //开启代码混淆
-            zipAlignEnabled true
-            shrinkResources true    // 移除无用的resource文件
+            minifyEnabled false  //开启代码混淆
             signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }

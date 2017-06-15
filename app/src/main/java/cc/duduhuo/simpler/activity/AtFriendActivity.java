@@ -264,6 +264,7 @@ public class AtFriendActivity extends BaseActivity {
             }
         });
         httpTask.execute(url, BaseConfig.sAccount.cookie);
+        registerAsyncTask(AtFriendActivity.class, httpTask);
     }
 
     private class MyTextWatcher implements TextWatcher {
@@ -314,4 +315,9 @@ public class AtFriendActivity extends BaseActivity {
         this.finish();
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(AtFriendActivity.class);
+        super.onDestroy();
+    }
 }

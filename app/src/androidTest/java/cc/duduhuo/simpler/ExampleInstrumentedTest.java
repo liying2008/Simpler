@@ -3,17 +3,13 @@ package cc.duduhuo.simpler;
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-import android.util.Log;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import cc.duduhuo.simpler.net.HttpGetTask;
-import cc.duduhuo.simpler.net.HttpListener;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Instrumentation test, which will execute on an Android device.

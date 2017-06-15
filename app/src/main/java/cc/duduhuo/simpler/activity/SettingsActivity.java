@@ -209,7 +209,7 @@ public class SettingsActivity extends BaseActivity {
     @OnClick(R.id.rlSettingFeedback)
     void setFeedback() {
         String text = getString(R.string.feedback_start, getString(R.string.app_name),
-                App.getInstance().getVersionName(), android.os.Build.VERSION.RELEASE);
+            App.getInstance().getVersionName(), android.os.Build.VERSION.RELEASE);
         String hint = "请在此填写您的反馈意见";
         startActivity(WBPostActivity.newIntent(this, "意见反馈", text, hint));
     }
@@ -282,6 +282,7 @@ public class SettingsActivity extends BaseActivity {
             }
         });
         task.execute(Constants.UPDATE_PATH);
+        registerAsyncTask(SettingsActivity.class, task);
     }
 
     /**
@@ -311,7 +312,7 @@ public class SettingsActivity extends BaseActivity {
                 dialog.dismiss();
                 if (mDownloadTask.getStatus() == FileDownloadStatus.paused) {
                     mDownloadTask = createAPKDownloadTask(downloadUrl, path, wrProgress.get(),
-                            wrPb.get(), wrDialog.get());
+                        wrPb.get(), wrDialog.get());
                     mDownloadId = mDownloadTask.start();
                 }
             }
@@ -324,7 +325,7 @@ public class SettingsActivity extends BaseActivity {
                     tvPause.setText("继续");
                 } else if (mDownloadTask.getStatus() == FileDownloadStatus.paused) {
                     mDownloadTask = createAPKDownloadTask(downloadUrl, path, wrProgress.get(),
-                            wrPb.get(), wrDialog.get());
+                        wrPb.get(), wrDialog.get());
                     mDownloadId = mDownloadTask.start();
                     tvPause.setText("暂停");
                 }

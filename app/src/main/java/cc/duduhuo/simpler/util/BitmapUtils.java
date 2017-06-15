@@ -30,10 +30,9 @@ public class BitmapUtils {
      * 得到上传图片的Bitmap
      *
      * @param source 图片路径
-     * @param sizeM  图片大小（以MB为单位）
      * @return
      */
-    public static Bitmap getUploadImage(String source, int sizeM) {
+    public static Bitmap getUploadImage(String source) {
         File file = new File(source);
         if (!file.exists() || !file.isFile()) {
             return null;
@@ -48,12 +47,12 @@ public class BitmapUtils {
         BaseSettings.sSettings = SettingsUtil.readSettings(BaseConfig.sUid, false);
         int type = BaseSettings.sSettings.uploadQuality;
         int size = bitmap.getByteCount();
+        int sizeM;
         switch (type) {
             case PicQuality.ORIGINAL:
-                Log.w(TAG, "原图上传");
+                sizeM = 5;
                 if (size < sizeM * 1024) {
                     // 小于sizeM
-                    Log.d("Image", bitmap.getByteCount() + "字节");
                     return bitmap;
                 } else {
                     Bitmap image = getImage(bitmap, sizeM);
@@ -61,7 +60,7 @@ public class BitmapUtils {
                     return image;
                 }
             case PicQuality.MIDDLE:
-                Log.w(TAG, "中图上传");
+                sizeM = 4;
                 if (size < sizeM * 1024) {
                     // 小于sizeM
                     return bitmap;
@@ -69,7 +68,7 @@ public class BitmapUtils {
                     return getImage(bitmap, sizeM);
                 }
             case PicQuality.THUMBNAIL:
-                Log.w(TAG, "小图上传");
+                sizeM = 3;
                 return getImage(bitmap, sizeM);
             default:
                 return null;
@@ -80,6 +79,7 @@ public class BitmapUtils {
      * 图片按比例大小压缩方法
      *
      * @param bitmap
+     * @param sizeM  图片大小（以MB为单位）
      * @return
      */
     public static Bitmap getImage(Bitmap bitmap, int sizeM) {

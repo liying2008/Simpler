@@ -154,4 +154,10 @@ public class WBFavoritesActivity extends BaseActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(WBFavoritesActivity.class);
+        super.onDestroy();
+    }
 }

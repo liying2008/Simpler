@@ -63,18 +63,26 @@ public class WBNearbyActivity extends BaseActivity {
         public boolean handleMessage(Message msg) {
             switch (msg.what) {
                 case HANDLE_ADDRESS_OK:
+                    // 停止定位。只获取一次结果
+                    mLocationClient.stop();
                     // 获取微博信息
                     loadStatuses(1, true);
                     mSwipeRefresh.setRefreshing(true);
                     break;
                 case HANDLE_SERVER_ERROR:
                     AppToast.showToast(R.string.location_type_server_error);
+                    // 停止定位。
+                    mLocationClient.stop();
                     break;
                 case HANDLE_NETWORK_EXCEPTION:
                     AppToast.showToast(R.string.location_type_network_exception);
+                    // 停止定位。只获取一次结果
+                    mLocationClient.stop();
                     break;
                 case HANDLE_CRITERIA_EXCEPTION:
                     AppToast.showToast(R.string.location_type_criteria_exception);
+                    // 停止定位。只获取一次结果
+                    mLocationClient.stop();
                     break;
                 default:
                     break;
@@ -166,8 +174,6 @@ public class WBNearbyActivity extends BaseActivity {
                         AppToast.showToast(R.string.resolve_result_failure);
                     }
                 }
-                // 停止定位。只获取一次结果
-                mLocationClient.stop();
             }
 
             @Override
@@ -220,4 +226,9 @@ public class WBNearbyActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(WBNearbyActivity.class);
+        super.onDestroy();
+    }
 }

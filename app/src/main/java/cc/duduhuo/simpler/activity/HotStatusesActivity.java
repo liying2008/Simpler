@@ -122,5 +122,12 @@ public class HotStatusesActivity extends BaseActivity {
             }
         });
         task.execute(url, BaseConfig.sAccount.cookie);
+        registerAsyncTask(HotStatusesActivity.class, task);
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(HotStatusesActivity.class);
+        super.onDestroy();
     }
 }

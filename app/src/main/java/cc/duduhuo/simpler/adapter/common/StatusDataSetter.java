@@ -49,6 +49,7 @@ import cc.duduhuo.simpler.activity.WBStatusDetailActivity;
 import cc.duduhuo.simpler.activity.WBUserHomeActivity;
 import cc.duduhuo.simpler.activity.WebViewActivity;
 import cc.duduhuo.simpler.app.App;
+import cc.duduhuo.simpler.base.BaseActivity;
 import cc.duduhuo.simpler.config.AttitudeContainer;
 import cc.duduhuo.simpler.config.BaseConfig;
 import cc.duduhuo.simpler.config.BaseSettings;
@@ -322,7 +323,7 @@ public class StatusDataSetter {
                 if (mGeoParser == null) {
                     mGeoParser = new GeoParser();
                 }
-                mGeoParser.getAddress(status.geo_ori, new GeoParser.OnLocationListener() {
+                mGeoParser.getAddress((BaseActivity) mActivity, status.geo_ori, new GeoParser.OnLocationListener() {
                     @Override
                     public void onGetAddress(String formattedAddress) {
                         itemHolder.tvPoi.setVisibility(View.VISIBLE);
@@ -972,7 +973,7 @@ public class StatusDataSetter {
                     }
                 });
                 httpTask.execute(url, BaseConfig.sAccount.cookie);
-
+                ((BaseActivity) mActivity).registerAsyncTask(((BaseActivity) mActivity).getClass(), httpTask);
             }
         }
 

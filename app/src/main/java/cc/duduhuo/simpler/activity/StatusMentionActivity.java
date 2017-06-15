@@ -180,4 +180,9 @@ public class StatusMentionActivity extends BaseActivity {
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(StatusMentionActivity.class);
+        super.onDestroy();
+    }
 }

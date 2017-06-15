@@ -93,7 +93,7 @@ public class PostStatusTask extends AsyncTask<Void, Void, Integer> {
             // 上传图片
             int size = mPhotoList.size();
             for (int i = 0; i < size; i++) {
-                Bitmap bitmap = BitmapUtils.getUploadImage(mPhotoList.get(i).path, 5);
+                Bitmap bitmap = BitmapUtils.getUploadImage(mPhotoList.get(i).path);
                 if (bitmap == null) {
                     Message msg = mHandler.obtainMessage();
                     msg.what = POST_PIC_NOT_FOUND;

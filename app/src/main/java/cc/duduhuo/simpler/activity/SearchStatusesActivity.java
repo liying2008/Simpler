@@ -131,5 +131,12 @@ public class SearchStatusesActivity extends BaseActivity {
             }
         });
         task.execute(url, BaseConfig.sAccount.cookie);
+        registerAsyncTask(SearchStatusesActivity.class, task);
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterAsyncTask(SearchStatusesActivity.class);
+        super.onDestroy();
     }
 }
